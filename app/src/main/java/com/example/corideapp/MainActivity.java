@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //to remove the status bar ..
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_mainasma2);
         //Animation
         topanimation= AnimationUtils.loadAnimation(this,R.animator.animation);
         buttom= AnimationUtils.loadAnimation(this,R.animator.buttom);

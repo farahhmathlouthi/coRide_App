@@ -25,7 +25,7 @@ public class MainActivity2 extends AppCompatActivity {
         continueB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(inputMobile.getText().toString().trim().isEmpty()) {
+                if(inputMobile.getText().toString().trim().isEmpty() || inputMobile.getText().toString().trim().length() != 8 ) {
                     Toast.makeText(MainActivity2.this,"Enter Your Phone Number",Toast.LENGTH_SHORT).show();
                     return;
                 }

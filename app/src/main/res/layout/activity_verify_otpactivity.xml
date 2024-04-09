@@ -190,7 +190,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/continueB"
+            android:id="@+id/verifyB"
             android:layout_width="wrap_content"
             android:layout_height="47dp"
             android:layout_marginStart="57dp"

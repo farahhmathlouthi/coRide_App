@@ -18,20 +18,15 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_mainasma1);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
         final EditText inputMobile = findViewById(R.id.inputMobile);
-        Button buttonGetOTP = findViewById(R.id.continueB);
-        buttonGetOTP.setOnClickListener(new View.OnClickListener() {
+        Button continueB = findViewById(R.id.continueB);
+        continueB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(inputMobile.getText().toString().trim().isEmpty()) {
-                    Toast.makeText(MainActivity2.this,"Enter Phone Number",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity2.this,"Enter Your Phone Number",Toast.LENGTH_SHORT).show();
                     return;
                 }
                 Intent intent = new Intent(getApplicationContext(),verifyOTPActivity.class);

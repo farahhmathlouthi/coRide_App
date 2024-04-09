@@ -7,4 +7,62 @@
     android:layout_height="match_parent"
     tools:context=".verifyOTPActivity">
 
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="420dp"
+        android:layout_height="731dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-5dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            app:srcCompat="@drawable/_6b90e38aac47c922f60778a67aac04e" />
+
+        <TextView
+            android:id="@+id/textView6"
+            style="@android:style/Widget.TextView"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:hyphenationFrequency="normal"
+            android:text="OTP Verification"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="274dp"
+            android:layout_height="40dp"
+            android:text="We will send you a One Time Password on this mobile number"
+            android:textAlignment="center"
+            android:textColor="@color/grey2" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:text="" />
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="57dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="57dp"
+            android:backgroundTint="@color/green3"
+            android:layout_marginBottom="97dp"
+            android:paddingHorizontal="120dp"
+            android:text="continue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

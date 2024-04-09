@@ -19,4 +19,5 @@
     <string name="verify">VERIFY</string>
     <string name="otp3">Enter the OTP sent to you</string>
     <string name="otp4">Didn\'t recieve the OTP ?</string>
+    <string name="sentOTP">Enter the OTP sent to</string>
 </resources>

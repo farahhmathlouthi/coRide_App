@@ -30,6 +30,5 @@ public class MainActivity extends AppCompatActivity {
         image=findViewById(R.id.greenlogo);
         image.setAnimation(buttom);
 
-
     }
 }

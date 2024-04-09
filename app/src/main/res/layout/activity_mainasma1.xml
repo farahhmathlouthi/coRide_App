@@ -139,7 +139,8 @@
             android:importantForAutofill="no"
             android:inputType="phone"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

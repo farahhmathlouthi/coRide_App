@@ -16,7 +16,7 @@
         android:layout_marginStart="69dp"
         android:layout_marginEnd="69dp"
         android:layout_marginBottom="36dp"
-        android:text="We will send you a One Time Password on this mobile number"
+        android:text="@string/otp1"
         android:textAlignment="center"
         android:textColor="@color/grey2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -81,7 +81,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/continueB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="57dp"
@@ -131,7 +131,7 @@
             android:verticalScrollbarPosition="left" />
 
         <EditText
-            android:id="@+id/editTextPhone3"
+            android:id="@+id/inputMobile"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

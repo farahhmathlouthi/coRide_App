@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "966905475694",
+    "project_id": "coride-app-12340",
+    "storage_bucket": "coride-app-12340.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966905475694:android:374b63db96ea45611dec7f",
+        "android_client_info": {
+          "package_name": "com.example.corideapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeG-cXXjbRjMC7TClUrXu4I557-GDJxUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

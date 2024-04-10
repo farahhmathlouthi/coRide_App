@@ -13,6 +13,21 @@
         android:theme="@style/Theme.CoRideApp"
         tools:targetApi="31">
         <activity
+            android:name=".Profil"
+            android:exported="false" />
+        <activity
+            android:name=".Favoris"
+            android:exported="false" />
+        <activity
+            android:name=".Planning"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
+            android:name=".rechercherpublier"
+            android:exported="false" />
+        <activity
             android:name=".settingsActivity"
             android:exported="true" />
         <activity

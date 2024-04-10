@@ -20,4 +20,9 @@
     <string name="otp3">Enter the OTP sent to you</string>
     <string name="otp4">Didn\'t recieve the OTP ?</string>
     <string name="sentOTP">Enter the OTP sent to</string>
+    <string name="notifications">Notifications</string>
+    <string name="settings">Settings</string>
+    <string name="History">history\n</string>
+    <string name="my_vehicles">My Vehicles</string>
+    <string name="history">History</string>
 </resources>

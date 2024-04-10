@@ -39,9 +39,8 @@
         android:id="@+id/imageView"
         android:layout_width="512dp"
         android:layout_height="352dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.623"
+        app:layout_constraintHorizontal_bias="0.603"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/loginimage2" />
@@ -82,10 +81,14 @@
 
 
     <FrameLayout
-        android:layout_width="403dp"
-        android:layout_height="100dp"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="529dp">
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="33dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <Button
             android:id="@+id/continueB"
@@ -97,13 +100,7 @@
             android:layout_marginBottom="97dp"
             android:backgroundTint="@color/green3"
             android:paddingHorizontal="120dp"
-            android:text="continue"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-            app:layout_constraintVertical_bias="0.0" />
+            android:text="continue" />
 
         <ProgressBar
             android:id="@+id/progressBar1"

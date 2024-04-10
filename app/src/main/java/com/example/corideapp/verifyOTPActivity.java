@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class verifyOTPActivity extends AppCompatActivity {
 
-    private EditText inputCode1, inputCode2, inputCode3 , inputCode4 , inputCode5, inputCode6, inputCode7, inputCode8;
+    protected EditText inputCode1, inputCode2, inputCode3 , inputCode4 , inputCode5, inputCode6, inputCode7, inputCode8;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -19,7 +19,7 @@
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="match_parent"
-            android:layout_height="357dp"
+            android:layout_height="367dp"
             app:srcCompat="@drawable/_6b90e38aac47c922f60778a67aac04e" />
 
         <TextView

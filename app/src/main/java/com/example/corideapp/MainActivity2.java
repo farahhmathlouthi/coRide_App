@@ -1,4 +1,4 @@
-package com.example.corideapp;
+/*package com.example.corideapp;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -97,4 +97,4 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
     }
-}
+}*/

@@ -84,13 +84,21 @@
     <FrameLayout
         android:layout_width="403dp"
         android:layout_height="100dp"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="529dp">
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="26dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="1.0">
 
         <Button
             android:id="@+id/continueB"
-            android:layout_width="wrap_content"
-            android:layout_height="47dp"
+            android:layout_width="370dp"
+            android:layout_height="24dp"
             android:layout_marginStart="57dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="57dp"

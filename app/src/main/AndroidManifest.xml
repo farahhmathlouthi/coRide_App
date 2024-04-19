@@ -15,22 +15,22 @@
         tools:targetApi="31">
         <activity
             android:name=".MainActivity3_signin"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Profil"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Favoris"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Planning"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Home"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".rechercherpublier"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".settingsActivity"
             android:exported="true" />

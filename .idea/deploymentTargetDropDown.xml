@@ -2,13 +2,16 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="Home">
+      <entry key="MainActivity">
         <State />
       </entry>
-      <entry key="MainActivity2 (1)">
+      <entry key="MainActivity2">
         <State />
       </entry>
       <entry key="app">
+        <State />
+      </entry>
+      <entry key="settingsActivity">
         <State />
       </entry>
       <entry key="verifyOTPActivity">

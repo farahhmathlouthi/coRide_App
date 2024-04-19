@@ -12,4 +12,6 @@
     <color name="grey2">#949494</color>
     <color name="black1">#212121</color>
     <color name="light_blue">#f2f1f6</color>
+    <color name="car">#58D49F</color>
+    <color name="car2">#D3E4DB</color>
 </resources>

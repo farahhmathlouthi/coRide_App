@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -40,6 +41,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     // Add the dependency for the Firebase Authentication library
     implementation("com.google.firebase:firebase-auth")
+    implementation ("com.google.android.gms:play-services-maps:17.0.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")

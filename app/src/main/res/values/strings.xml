@@ -25,4 +25,5 @@
     <string name="History">history\n</string>
     <string name="my_vehicles">My Vehicles</string>
     <string name="history">History</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

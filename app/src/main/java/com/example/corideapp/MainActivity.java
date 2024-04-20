@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this,MainActivity3_signin.class);
+                Intent intent = new Intent(MainActivity.this,Information_client.class);
                 startActivity(intent);
                 finish();
             }

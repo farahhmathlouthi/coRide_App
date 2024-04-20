@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue3"
+    android:background="@color/grey"
     android:backgroundTintMode="src_in"
     tools:context=".Information_client">
 
@@ -16,7 +16,7 @@
         android:layout_marginTop="36dp"
         android:fontFamily="@font/akaya_telivigala"
         android:text="Marahbé CoRiders"
-        android:textColor="@color/green3"
+        android:textColor="#00BCD4"
         android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,7 +29,8 @@
         android:fontFamily="@font/akaya_telivigala"
         android:text="we will keep your information secure and it will not be shared anywhere "
         android:textAlignment="center"
-        android:textColor="@color/green3"
+        android:textColor="@color/bluesata3"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,14 +44,15 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/name"
         android:ems="10"
         android:hint="Name"
         android:inputType="text"
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
         android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        android:textColor="@color/green3"
+        android:paddingBottom="20dp"
+        android:textColor="@color/bluesata3"
         app:layout_constraintEnd_toEndOf="@+id/textView8"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView8"
@@ -62,13 +64,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/name"
         android:ems="10"
         android:hint="Surname"
         android:inputType="text"
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
         android:paddingRight="10dp"
-        android:paddingBottom="10dp"
+        android:paddingBottom="20dp"
         android:textColor="@color/green3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/inputusername"
@@ -83,13 +86,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/email"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
         android:paddingRight="10dp"
-        android:paddingBottom="10dp"
+        android:paddingBottom="20dp"
         android:textColor="@color/green3"
         app:layout_constraintEnd_toEndOf="@+id/inputprenom"
         app:layout_constraintStart_toStartOf="@+id/inputprenom"
@@ -97,34 +101,38 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="230dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginBottom="10dp"
         android:hapticFeedbackEnabled="true"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputemail"
-        app:layout_constraintVertical_bias="0.060000002">
+        app:layout_constraintVertical_bias="0.0">
 
         <RadioButton
             android:id="@+id/buttonMale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginRight="20dp"
-
             android:background="@drawable/input_bg"
-            android:text="Male     " /> <!-- Adjust margin as needed -->
+            android:button="@drawable/male"
+            android:text="  Male  " /> <!-- Adjust margin as needed -->
 
         <RadioButton
             android:id="@+id/buttonFemale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="50dp"
             android:background="@drawable/input_bg"
-            android:text="Female" />
+            android:button="@drawable/female"
+            android:text="Female  " />
     </RadioGroup>
 
     <Button
@@ -134,7 +142,7 @@
         android:layout_marginStart="57dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="57dp"
-        android:backgroundTint="@color/green3"
+        android:backgroundTint="@color/bluesata3"
         android:text="Continue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

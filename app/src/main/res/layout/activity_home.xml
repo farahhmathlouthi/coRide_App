@@ -23,7 +23,7 @@
 
 
                 <TextView
-                    android:id="@+id/amazonName"
+                    android:id="@+id/w1"
                     android:layout_width="210dp"
                     android:layout_height="110dp"
                     android:layout_marginStart="18dp"
@@ -45,7 +45,7 @@
                     android:textColor="@color/green3"
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/amazonName" />
+                    app:layout_constraintTop_toBottomOf="@id/w1" />
 
                 <LinearLayout
                     android:id="@+id/row1"
@@ -61,11 +61,12 @@
                     app:layout_constraintTop_toBottomOf="@+id/amazonDesc">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/clothingCard"
+                        android:id="@+id/rideGiverB"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
+                        android:clickable="true"
                         app:cardCornerRadius="20dp"
                         app:cardElevation="20dp">
 
@@ -81,7 +82,7 @@
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="10dp"
                                 android:fontFamily="@font/montserrat_bold"
-                                android:text="Ride Giver"
+                                android:text="@string/ride_giver"
                                 android:textColor="@color/green3"
                                 android:textSize="20sp" />
 
@@ -96,10 +97,12 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/rideTakerB"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
+                        android:clickable="true"
                         app:cardCornerRadius="20dp"
                         app:cardElevation="20dp">
 
@@ -115,7 +118,7 @@
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="10dp"
                                 android:fontFamily="@font/montserrat_bold"
-                                android:text="Ride Taker"
+                                android:text="@string/ride_taker"
                                 android:textColor="@color/green3"
                                 android:textSize="20sp" />
 

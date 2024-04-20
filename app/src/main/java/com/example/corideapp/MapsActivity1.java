@@ -11,7 +11,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.corideapp.databinding.ActivityMapsBinding;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity1 extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 private ActivityMapsBinding binding;

@@ -9,26 +9,27 @@
     android:background="@color/green2"
     tools:context=".rideTaker">
 
+
     <TextView
         android:id="@+id/textView7"
         android:layout_width="274dp"
         android:layout_height="40dp"
         android:layout_marginStart="69dp"
         android:layout_marginEnd="69dp"
-        android:layout_marginBottom="36dp"
-        android:text="@string/otp1"
+        android:layout_marginBottom="24dp"
+        android:text="Your Location Is Confidential ! "
         android:textAlignment="center"
         android:textColor="@color/grey2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-
     <LinearLayout
-        android:layout_width="413dp"
-        android:layout_height="816dp"
+        android:layout_width="412dp"
+        android:layout_height="786dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteX="4dp"
         tools:layout_editor_absoluteY="1dp">
 
         <LinearLayout
@@ -92,11 +93,14 @@
 
             <EditText
                 android:id="@+id/depart"
-                android:layout_width="353dp"
+                android:layout_width="match_parent"
                 android:layout_height="47dp"
                 android:layout_margin="15dp"
                 android:backgroundTint="@color/green3"
+                android:drawableLeft="@drawable/logo"
+                android:drawablePadding="8dp"
                 android:hint="Enter Your Departure Location"
+                android:inputType="text|textPostalAddress|textMultiLine"
                 android:paddingHorizontal="30dp" />
 
             <TextView
@@ -114,8 +118,11 @@
                 android:layout_height="47dp"
                 android:layout_margin="15dp"
                 android:backgroundTint="@color/green3"
+                android:drawableLeft="@drawable/logo"
+                android:drawablePadding="8dp"
                 android:hint="Enter Your Arrival Location"
-                android:paddingHorizontal="20dp" />
+                android:inputType="text|textPostalAddress|textMultiLine"
+                android:paddingHorizontal="30dp" />
 
             <TextView
                 android:id="@+id/textView13"
@@ -129,7 +136,7 @@
             <RelativeLayout
                 android:id="@+id/activity_main"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
@@ -142,15 +149,14 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:hint="Select Date"
-                    android:textSize="20dp"
-                    android:drawableTop="@drawable/logo_vert"/>
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/tvTimer2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableTop="@drawable/logo_vert"
                     android:hint="Select Date"
+                    android:inputType="datetime"
                     android:textSize="20dp" />
 
             </RelativeLayout>
@@ -183,16 +189,18 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/continueB"
+            android:id="@+id/continueC"
             android:layout_width="wrap_content"
             android:layout_height="47dp"
             android:layout_marginStart="57dp"
             android:layout_marginEnd="57dp"
-            android:layout_marginBottom="140dp"
+            android:layout_marginBottom="97dp"
             android:backgroundTint="@color/green3"
             android:paddingHorizontal="120dp"
-            android:text="continue" />
-
+            android:text="continue"
+            tools:layout_editor_absoluteX="57dp"
+            tools:layout_editor_absoluteY="843dp" />
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

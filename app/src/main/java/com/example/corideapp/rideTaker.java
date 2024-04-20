@@ -2,17 +2,19 @@ package com.example.corideapp;
 
 import android.app.TimePickerDialog;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -20,6 +22,9 @@ import java.util.Date;
 
 public class rideTaker extends AppCompatActivity {
 
+    EditText depart;
+    EditText arrive;
+    Drawable logoDrawable;
     TextView tvTimer1, tvTimer2;
     int t1Hour, t1Minute, t2Hour, t2Minute;
 
@@ -28,9 +33,21 @@ public class rideTaker extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ride_taker);
 
+        // Initialize views
+        depart = findViewById(R.id.depart);
+        arrive = findViewById(R.id.arrive);
         tvTimer1 = findViewById(R.id.tvTimer1);
         tvTimer2 = findViewById(R.id.tvTimer2);
 
+        // Initialize logo drawable
+        logoDrawable = ContextCompat.getDrawable(this, R.drawable.logo);
+        logoDrawable.setBounds(0, 0, logoDrawable.getIntrinsicWidth(), logoDrawable.getIntrinsicHeight());
+
+        // Set the compound drawables for EditTexts
+        arrive.setCompoundDrawablesWithIntrinsicBounds(null, null, logoDrawable, null);
+        depart.setCompoundDrawablesWithIntrinsicBounds(null, null, logoDrawable, null);
+
+        // Set click listeners for time pickers
         tvTimer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,6 +99,7 @@ public class rideTaker extends AppCompatActivity {
             }
         });
 
+        // Apply system bars insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);

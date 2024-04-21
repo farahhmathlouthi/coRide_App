@@ -1,6 +1,7 @@
 package com.example.corideapp;
 
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -38,6 +39,25 @@ public class rideTaker extends AppCompatActivity {
         arrive = findViewById(R.id.arrive);
         tvTimer1 = findViewById(R.id.tvTimer1);
         tvTimer2 = findViewById(R.id.tvTimer2);
+
+
+        depart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(rideTaker.this,mapActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        arrive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(rideTaker.this,mapActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         // Initialize logo drawable
         logoDrawable = ContextCompat.getDrawable(this, R.drawable.logo);

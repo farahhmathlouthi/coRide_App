@@ -29,4 +29,8 @@
     <string name="ride_giver">Ride Giver</string>
     <string name="ride_taker">Ride Taker</string>
     <string name="create_your_ride">Create Your Ride !</string>
+    <string name="name_validation_message">Le nom doit contenir des lettres (des chiffres).</string>
+    <string name="surname_validation_message">Le prénom doit contenir des lettres  (des chiffres).</string>
+    <string name="email_validation_message">Veuillez saisir une adresse e-mail valide.</string>
+
 </resources>

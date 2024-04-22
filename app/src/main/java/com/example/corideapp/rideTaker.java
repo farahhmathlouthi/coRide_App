@@ -49,9 +49,9 @@ public class rideTaker extends AppCompatActivity {
         setContentView(R.layout.activity_ride_taker);
 
         // Initialize views
-        depart = findViewById(R.id.depart);
+        depart = findViewById(R.id.depart1);
         arrive = findViewById(R.id.arrive);
-        continueC = findViewById(R.id.continueC);
+        continueC = findViewById(R.id.continueD);
 
 
         depart.setOnClickListener(new View.OnClickListener() {
@@ -79,8 +79,8 @@ public class rideTaker extends AppCompatActivity {
                 drawTrack(depart.getText().toString(), arrive.getText().toString());
             }
         });
-        editime = findViewById(R.id.editime);
-        editdate = findViewById(R.id.editdate);
+        editime = findViewById(R.id.editime1);
+        editdate = findViewById(R.id.editdate1);
 
         // Initialize logo drawable
         logoDrawable = ContextCompat.getDrawable(this, R.drawable.logo);

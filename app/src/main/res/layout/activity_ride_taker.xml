@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="right"
-    android:background="@color/green2"
+    android:background="@color/gr"
     tools:context=".rideTaker">
 
 
@@ -57,9 +57,9 @@
                     android:textSize="30dp" />
 
                 <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:id="@+id/i1"
+                    android:layout_width="125dp"
+                    android:layout_height="125dp"
                     android:layout_gravity="end|top"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="20dp"
@@ -87,12 +87,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="Departure point"
+                android:text="Departure Point:"
                 android:textColor="@color/green3"
                 android:textSize="23dp" />
 
             <EditText
-                android:id="@+id/depart"
+                android:id="@+id/depart1"
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
                 android:layout_margin="15dp"
@@ -108,7 +108,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="Arrival point"
+                android:text="Arrival Point:"
                 android:textColor="@color/green3"
                 android:textSize="23dp" />
 
@@ -129,7 +129,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="Date"
+                android:text="Date:"
                 android:textColor="@color/green3"
                 android:textSize="23dp" />
 
@@ -144,7 +144,7 @@
                 tools:context="tabian.com.datepickerdialog.MainActivity">
 
                 <TextView
-                    android:id="@+id/editime"
+                    android:id="@+id/editime1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -152,7 +152,7 @@
                     android:textSize="20dp" />
 
                 <TextView
-                    android:id="@+id/editdate"
+                    android:id="@+id/editdate1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Select Date"
@@ -189,7 +189,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/continueC"
+            android:id="@+id/continueD"
             android:layout_width="wrap_content"
             android:layout_height="47dp"
             android:layout_marginStart="57dp"

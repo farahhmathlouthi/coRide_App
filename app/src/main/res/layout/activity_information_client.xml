@@ -11,7 +11,7 @@
 
 
     <TextView
-        android:id="@+id/w1"
+        android:id="@+id/w2"
         android:layout_width="210dp"
         android:layout_height="110dp"
         android:layout_marginStart="18dp"
@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/w1" />
+        app:layout_constraintTop_toBottomOf="@+id/w2" />
 
 
     <EditText
@@ -160,13 +160,13 @@
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="185dp"
-        android:layout_height="163dp"
+        android:layout_width="209dp"
+        android:layout_height="192dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.969"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_vert" />
+        app:srcCompat="@drawable/halaa" />
 
     <TextView
         android:id="@+id/nomcontrole"

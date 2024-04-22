@@ -144,15 +144,15 @@
                 tools:context="tabian.com.datepickerdialog.MainActivity">
 
                 <TextView
-                    android:id="@+id/tvTimer1"
+                    android:id="@+id/editime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:hint="Select Date"
+                    android:hint="Select Time"
                     android:textSize="20dp" />
 
                 <TextView
-                    android:id="@+id/tvTimer2"
+                    android:id="@+id/editdate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Select Date"

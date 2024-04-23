@@ -48,7 +48,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="96dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="16dp"
                     android:text="Please Select Your Ride Experience"
                     android:textColor="@color/green3"
                     android:textSize="14sp"

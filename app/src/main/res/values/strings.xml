@@ -12,7 +12,7 @@
     <string name="_216">+ 216</string>
     <string name="tn">🇹🇳</string>
     <string name="continue1">Continue</string>
-    <string name="otp1">We will send you a One Time Password on this mobile number</string>
+    <string name="otp1">We will send you a One Time Password on this Email Address</string>
     <string name="otp2">Didnt receive the OTP</string>
     <string name="resend_otp">Resend OTP</string>
     <string name="c1">continue</string>

@@ -71,6 +71,7 @@
                         android:id="@+id/rideGiverB"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:background="@color/white"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -106,6 +107,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/rideTakerB"
                         android:layout_width="0dp"
+                        android:background="@color/white"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:layout_weight="1"

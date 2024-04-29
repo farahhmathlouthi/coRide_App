@@ -29,7 +29,7 @@ public class verifyOTPActivity extends AppCompatActivity {
         setContentView(R.layout.activity_verify_otpactivity);
 
         TextView textEmail = findViewById(R.id.textEmail);
-        textEmail.setText(String.format("+216-%s",getIntent().getStringExtra("mobile")));
+        textEmail.setText(String.format("to : ",getIntent().getStringExtra("mobile")));
         verifyB = findViewById(R.id.verifyB);
 
         progressBar2 = findViewById(R.id.progressBar2);

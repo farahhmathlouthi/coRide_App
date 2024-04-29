@@ -1,8 +1,10 @@
 package com.example.corideapp;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.view.MotionEvent;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -15,6 +17,8 @@ import java.util.regex.Pattern;
 public class MainActivity3_signin extends AppCompatActivity {
 
     private EditText passwordEditText;
+    private Drawable showPasswordDrawable;
+    private boolean passwordVisible = false;
     private ImageButton togglePasswordVisibilityButton;
 
     @Override
@@ -22,10 +26,23 @@ public class MainActivity3_signin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
-        passwordEditText = findViewById(R.id.pwd);
-        togglePasswordVisibilityButton = findViewById(R.id.togglePasswordVisibility);
+        passwordEditText = findViewById(R.id.inputP1);
+        // Get the drawable used for toggling password visibility
+        showPasswordDrawable = getResources().getDrawable(R.drawable.dossiers);
+        // Set the bounds for the drawable
+        showPasswordDrawable.setBounds(0, 0, showPasswordDrawable.getIntrinsicWidth(), showPasswordDrawable.getIntrinsicHeight());
+        // Set the compound drawable to the right of the EditText
+        passwordEditText.setCompoundDrawables(null, null, showPasswordDrawable, null);
 
-        togglePasswordVisibilityButton.setOnClickListener(v -> togglePasswordVisibility());
+        passwordEditText.setOnTouchListener((v, event) -> {
+            // Check if the touch event is inside the bounds of the drawable
+            if (event.getAction() == MotionEvent.ACTION_UP && event.getRawX() >= (passwordEditText.getRight() - passwordEditText.getCompoundDrawables()[2].getBounds().width())) {
+                // Toggle password visibility
+                togglePasswordVisibility();
+                return true;
+            }
+            return false;
+        });
 
         findViewById(R.id.singInButton).setOnClickListener(v -> {
             String password = passwordEditText.getText().toString();
@@ -60,15 +77,22 @@ public class MainActivity3_signin extends AppCompatActivity {
     }
 
     private void togglePasswordVisibility() {
-        if (passwordEditText.getTransformationMethod() == PasswordTransformationMethod.getInstance()) {
-            // Show password
-            passwordEditText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-        } else {
+        if (passwordVisible) {
             // Hide password
             passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            passwordVisible = false;
+            // Update drawable to show the "show password" icon
+            showPasswordDrawable = getResources().getDrawable(R.drawable.dossiers);
+        } else {
+            // Show password
+            passwordEditText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+            passwordVisible = true;
+            // Update drawable to show the "hide password" icon
+            showPasswordDrawable = getResources().getDrawable(R.drawable.dossiers);
         }
-        // Move the cursor to the end of the text
-        passwordEditText.setSelection(passwordEditText.getText().length());
+        // Set bounds for the new drawable
+        showPasswordDrawable.setBounds(0, 0, showPasswordDrawable.getIntrinsicWidth(), showPasswordDrawable.getIntrinsicHeight());
+        // Set the new drawable to the right of the EditText
+        passwordEditText.setCompoundDrawables(null, null, showPasswordDrawable, null);
     }
-
 }

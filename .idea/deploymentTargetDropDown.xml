@@ -2,35 +2,19 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="MainActivity">
+      <entry key="Information_client">
         <State />
       </entry>
-      <entry key="MainActivity3_signin">
+      <entry key="MainActivity">
         <State />
       </entry>
       <entry key="app">
         <State />
       </entry>
-      <entry key="rideTaker (1)">
-        <State>
-          <targetSelectedWithDropDown>
-            <Target>
-              <type value="QUICK_BOOT_TARGET" />
-              <deviceKey>
-                <Key>
-                  <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\farah math\.android\avd\farah.avd" />
-                </Key>
-              </deviceKey>
-            </Target>
-          </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-04-22T16:41:24.930582400Z" />
-        </State>
-      </entry>
-      <entry key="signInActivity">
+      <entry key="rideTaker">
         <State />
       </entry>
-      <entry key="welcomeActivity">
+      <entry key="signUpActivity">
         <State />
       </entry>
     </value>

@@ -1,14 +1,13 @@
 package com.example.corideapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.text.InputType;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,12 +22,12 @@ public class MainActivity3_signin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
-        passwordEditText = findViewById(R.id.editTextTextPassword);
+        passwordEditText = findViewById(R.id.pwd);
         togglePasswordVisibilityButton = findViewById(R.id.togglePasswordVisibility);
 
         togglePasswordVisibilityButton.setOnClickListener(v -> togglePasswordVisibility());
 
-        findViewById(R.id.singInButtom).setOnClickListener(v -> {
+        findViewById(R.id.singInButton).setOnClickListener(v -> {
             String password = passwordEditText.getText().toString();
             if (isValidPassword(password)) {
                 Toast.makeText(MainActivity3_signin.this, "Password is valid.", Toast.LENGTH_SHORT).show();

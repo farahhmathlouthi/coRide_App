@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="113dp"
         android:layout_marginEnd="90dp"
-        android:text="To sign in or to connect, please enter your Email Address."
+        android:text="To sign in, please enter your Email Address."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent"

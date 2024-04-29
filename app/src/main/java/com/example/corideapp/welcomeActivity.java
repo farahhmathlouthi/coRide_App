@@ -5,30 +5,30 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-
-public class MainActivity2 extends AppCompatActivity {
-    public FirebaseAuth mAuth;
-    public EditText inputEmail;
+public class welcomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.welcome_activity);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_welcome);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
-        mAuth = FirebaseAuth.getInstance();
-
-        inputEmail = findViewById(R.id.inputEmail);
-        Button continueB = findViewById(R.id.continueB);
+        Button signin = findViewById(R.id.signin);
+        Button signup = findViewById(R.id.signup);
 
         final ProgressBar progressBar = findViewById(R.id.progressBar1);
         continueB.setOnClickListener(new View.OnClickListener() {
@@ -48,20 +48,5 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-
-    private void sendVerificationEmail(String email) {
-        mAuth.sendPasswordResetEmail(email)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(MainActivity2.this, "Verification email sent", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(MainActivity2.this, "Failed to send verification email", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
     }
 }

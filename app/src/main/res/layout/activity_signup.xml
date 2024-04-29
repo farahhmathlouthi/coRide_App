@@ -12,11 +12,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="512dp"
-        android:layout_height="352dp"
+        android:layout_width="700dp"
+        android:layout_height="330dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/signup" />
@@ -24,12 +24,12 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="345dp"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="33dp"
         android:layout_marginEnd="33dp"
-        android:layout_marginBottom="331dp"
+
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/signupTextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,88 +56,95 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="303dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="56dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="530dp">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/tn"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:textSize="34sp" />
+        android:id="@+id/signupTextInputLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="63dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <EditText
-            android:id="@+id/emailsi"
-            android:layout_width="120dp"
+            android:id="@+id/inputN"
+            android:layout_width="338dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_bg"
+            android:backgroundTint="@color/gr"
+            android:drawableLeft="@drawable/profil"
+            android:ems="10"
+            android:hint="Enter Your Full Name"
+            android:inputType="text"
+            android:padding="15dp" />
+
+        <EditText
+            android:id="@+id/inputE2"
+            android:layout_width="338dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_bg"
+            android:backgroundTint="@color/gr"
+            android:drawableLeft="@drawable/e_mail"
+            android:ems="10"
+            android:hint="Enter Your Email"
+            android:inputType="textEmailAddress"
+            android:padding="15dp" />
+
+        <EditText
+            android:id="@+id/inputP2"
+            android:layout_width="338dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_bg"
+            android:backgroundTint="@color/gr"
+            android:drawableLeft="@drawable/key"
+            android:ems="10"
+            android:hint="Enter Your Password"
+            android:inputType="textPassword"
+            android:padding="15dp" />
+
+        <EditText
+            android:id="@+id/inputP3"
+            android:layout_width="338dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_bg"
+            android:backgroundTint="@color/gr"
+            android:drawableLeft="@drawable/dossiers"
+            android:ems="10"
+            android:hint="Re-Enter Your Password"
+            android:inputType="textPassword"
+            android:padding="15dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:fontFamily="@font/montserrat_light"
-            android:importantForAutofill="no"
-            android:inputType="phone"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textSize="22sp"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:text="I Agree To The Terms And Conditions"
+            android:textColor="@color/green3"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/singInButton"
+            android:layout_width="338dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/green3"
+            android:paddingHorizontal="120dp"
+            android:text="Continue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </LinearLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordTextInputLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="56dp"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <EditText
-                android:id="@+id/pwd"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toStartOf="@id/togglePasswordVisibility"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:textAlignment="center" />
-
-            <ImageButton
-                android:id="@+id/togglePasswordVisibility"
-                android:layout_width="51dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:background="?attr/selectableItemBackground"
-                android:padding="8dp"
-                android:src="@drawable/password_24" />
-        </RelativeLayout>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <Button
-        android:id="@+id/singInButton"
-        android:layout_width="338dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="50dp"
-        android:backgroundTint="@color/green3"
-        android:paddingHorizontal="120dp"
-        android:text="Continue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordTextInputLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

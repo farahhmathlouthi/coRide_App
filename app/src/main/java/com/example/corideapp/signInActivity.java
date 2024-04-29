@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -26,6 +27,8 @@ public class signInActivity extends AppCompatActivity {
         });
 
         Button signInButton = findViewById(R.id.singInButton);
+        EditText inputE1 = findViewById(R.id.inputE2);
+        EditText inputP1 = findViewById(R.id.inputP1);
         TextView forgotten = findViewById(R.id.forgotten);
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override

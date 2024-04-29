@@ -51,26 +51,26 @@
         tools:layout_editor_absoluteY="461dp">
 
         <EditText
-            android:id="@+id/inputE"
+            android:id="@+id/inputE2"
             android:layout_width="338dp"
             android:layout_height="53dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/input_bg"
             android:backgroundTint="@color/gr"
-            android:drawableLeft="@drawable/password_24"
+            android:drawableLeft="@drawable/e_mail"
             android:ems="10"
             android:hint="Enter Your Email"
             android:inputType="textEmailAddress"
             android:padding="15dp" />
 
         <EditText
-            android:id="@+id/inputpassword"
+            android:id="@+id/inputP1"
             android:layout_width="338dp"
             android:layout_height="53dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/input_bg"
             android:backgroundTint="@color/gr"
-            android:drawableLeft="@drawable/password_24"
+            android:drawableLeft="@drawable/dossiers"
             android:ems="10"
             android:hint="Enter Your Password"
             android:inputType="textPassword"
@@ -81,6 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="200dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/montserrat_light"
             android:text="Forget Password?"
             android:textColor="@color/green3"

@@ -130,9 +130,15 @@
             android:text="I Agree To The Terms And Conditions"
             android:textColor="@color/green3"
             android:textSize="12dp" />
+        <ProgressBar
+            android:id="@+id/progressBarSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
+        </ProgressBar>
         <Button
-            android:id="@+id/singInButton"
+            android:id="@+id/signUpButton"
             android:layout_width="338dp"
             android:layout_height="50dp"
             android:backgroundTint="@color/green3"

@@ -72,13 +72,12 @@
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="30dp">
 
-                <TextView
+                <Button
                     android:id="@+id/choice1"
-                    style="@style/Widget.AppCompat.TextView"
                     android:layout_width="match_parent"
+                    android:backgroundTint="@color/gr"
                     android:layout_height="80dp"
                     android:layout_margin="10dp"
-                    android:background="@color/green1"
                     android:fontFamily="@font/montserrat_light"
                     android:gravity="center"
                     android:text="@string/notifications"
@@ -86,13 +85,12 @@
                     android:textColor="@color/green3"
                     android:textSize="24sp" />
 
-                <TextView
+                <Button
                     android:id="@+id/choice2"
-                    style="@style/Widget.AppCompat.TextView"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_margin="10dp"
-                    android:background="@color/green1"
+                    android:backgroundTint="@color/gr"
                     android:fontFamily="@font/montserrat_light"
                     android:gravity="center"
                     android:text="@string/settings"
@@ -100,30 +98,40 @@
                     android:textColor="@color/green3"
                     android:textSize="24sp" />
 
-                <TextView
+                <Button
                     android:id="@+id/choice3"
-                    style="@style/Widget.AppCompat.TextView"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_margin="10dp"
-                    android:background="@color/green1"
+                    android:backgroundTint="@color/gr"
                     android:fontFamily="@font/montserrat_light"
                     android:gravity="center"
-                    android:text="@string/history"
+                    android:text="About Us"
                     android:textAlignment="center"
                     android:textColor="@color/green3"
                     android:textSize="24sp" />
 
-                <TextView
+                <Button
                     android:id="@+id/choice4"
-                    style="@style/Widget.AppCompat.TextView"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_margin="10dp"
-                    android:background="@color/green1"
+                    android:backgroundTint="@color/gr"
                     android:fontFamily="@font/montserrat_light"
                     android:gravity="center"
                     android:text="@string/my_vehicles"
+                    android:textAlignment="center"
+                    android:textColor="@color/green3"
+                    android:textSize="24sp" />
+                <Button
+                    android:id="@+id/logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/gr"
+                    android:fontFamily="@font/montserrat_light"
+                    android:gravity="center"
+                    android:text="Logout"
                     android:textAlignment="center"
                     android:textColor="@color/green3"
                     android:textSize="24sp" />

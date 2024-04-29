@@ -2,11 +2,8 @@ package com.example.corideapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,21 +27,21 @@ public class welcomeActivity extends AppCompatActivity {
         Button signin = findViewById(R.id.signin);
         Button signup = findViewById(R.id.signup);
 
-        final ProgressBar progressBar = findViewById(R.id.progressBar1);
-        continueB.setOnClickListener(new View.OnClickListener() {
+        signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = inputEmail.getText().toString().trim();
-                if(TextUtils.isEmpty(email)) {
-                    Toast.makeText(MainActivity2.this,"Enter Your Email Adress !",Toast.LENGTH_SHORT).show();
-                } else {
-                    sendVerificationEmail(email);
-                    continueB.setVisibility(View.INVISIBLE);
-                    progressBar.setVisibility(View.VISIBLE);
-                }
 
-                Intent intent = new Intent(getApplicationContext(),verifyOTPActivity.class);
-                intent.putExtra("mobile", inputEmail.getText().toString());
+                Intent intent = new Intent(getApplicationContext(), signInActivity.class);
+
+                startActivity(intent);
+            }
+        });
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), signUpActivity.class);
+
                 startActivity(intent);
             }
         });

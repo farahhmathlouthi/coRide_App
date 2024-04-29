@@ -11,9 +11,6 @@
       <entry key="app">
         <State />
       </entry>
-      <entry key="rideGiver">
-        <State />
-      </entry>
       <entry key="rideTaker">
         <State />
       </entry>
@@ -32,6 +29,9 @@
           </targetSelectedWithDropDown>
           <timeTargetWasSelectedWithDropDown value="2024-04-22T16:41:24.930582400Z" />
         </State>
+      </entry>
+      <entry key="signinactivity">
+        <State />
       </entry>
     </value>
   </component>

@@ -47,7 +47,7 @@
         tools:layout_editor_absoluteY="476dp" />
 
     <TextView
-        android:id="@+id/farah"
+        android:id="@+id/asma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_bold"
@@ -82,7 +82,7 @@
         tools:layout_editor_absoluteY="520dp" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/textView18"
         android:layout_width="397dp"
         android:layout_height="52dp"
         android:text="Join the movement - download CoRide today!"
@@ -90,8 +90,7 @@
         android:textColor="@color/green3"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.214"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="712dp" />
+        tools:layout_editor_absoluteY="762dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

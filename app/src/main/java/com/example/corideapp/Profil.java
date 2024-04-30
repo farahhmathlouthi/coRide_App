@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Profil extends AppCompatActivity {
 
     FirebaseAuth auth;
-    Button log;
+    Button log, owners, request, pi;
     FirebaseAuth user;
 
     @Override
@@ -26,12 +26,32 @@ public class Profil extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         log = findViewById(R.id.logout);
+        owners = findViewById(R.id.choice4);
+        request = findViewById(R.id.choice3);
+        pi = findViewById(R.id.choice1);
         user = auth;
         ImageView backButton = findViewById(R.id.back1);
+
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish(); // Navigate back to the previous activity
+            }
+        });
+
+        owners.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Owners.class);
+                startActivity(intent);
+            }
+        });
+
+        pi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), About_Us.class);
+                startActivity(intent);
             }
         });
 

@@ -38,9 +38,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/w2" />
 
-
     <EditText
-        android:id="@+id/inputusername"
+        android:id="@+id/inputName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -48,7 +47,7 @@
         android:layout_marginEnd="32dp"
         android:background="@drawable/input_bg"
         android:backgroundTint="@color/gr"
-        android:drawableLeft="@drawable/name2"
+        android:drawableLeft="@drawable/profil"
         android:ems="10"
         android:hint="  User Name"
         android:inputType="text"
@@ -63,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
-        android:id="@+id/inputprenom"
+        android:id="@+id/inputAdress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -71,7 +70,7 @@
         android:backgroundTint="@color/gr"
         android:drawableLeft="@drawable/name"
         android:ems="10"
-        android:hint="  User Name"
+        android:hint="  Address"
         android:inputType="text"
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
@@ -79,14 +78,14 @@
         android:paddingBottom="20dp"
         android:textColor="@color/green3"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/inputusername"
+        app:layout_constraintEnd_toEndOf="@+id/inputName"
         app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="@+id/inputusername"
-        app:layout_constraintTop_toBottomOf="@+id/inputusername"
+        app:layout_constraintStart_toStartOf="@+id/inputName"
+        app:layout_constraintTop_toBottomOf="@+id/inputName"
         app:layout_constraintVertical_bias="0.064" />
 
     <EditText
-        android:id="@+id/inputemail"
+        android:id="@+id/inputPhone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
@@ -101,10 +100,10 @@
         android:paddingRight="10dp"
         android:paddingBottom="20dp"
         android:textColor="@color/green3"
-        app:layout_constraintEnd_toEndOf="@+id/inputprenom"
+        app:layout_constraintEnd_toEndOf="@+id/inputAdress"
         app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="@+id/inputprenom"
-        app:layout_constraintTop_toBottomOf="@+id/inputprenom" />
+        app:layout_constraintStart_toStartOf="@+id/inputAdress"
+        app:layout_constraintTop_toBottomOf="@+id/inputAdress" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -118,7 +117,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.446"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputemail"
+        app:layout_constraintTop_toBottomOf="@+id/inputPhone"
         app:layout_constraintVertical_bias="0.0">
 
 

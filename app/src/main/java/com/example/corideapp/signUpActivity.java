@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -29,9 +28,9 @@ public class signUpActivity extends AppCompatActivity {
 
     private EditText editTextEmail , editTextPassword1 , editTextName, editTextPassword2;
     private Button signUpB;
-    FirebaseAuth mAuth;
-    DatabaseReference mDatabase;
-    ProgressBar SP;
+    private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
+    private ProgressBar SP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +39,6 @@ public class signUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         mAuth = FirebaseAuth.getInstance();
-        FirebaseApp.initializeApp(this);
-
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         signUpB = findViewById(R.id.signUpButton);
@@ -72,7 +69,7 @@ public class signUpActivity extends AppCompatActivity {
                     SP.setVisibility(View.GONE);
                     return;
                 }
-                else if (!password.equals(password2)) {
+                if (!password.equals(password2)) {
                     Toast.makeText(signUpActivity.this, "Passwords do not match. Please re-enter.", Toast.LENGTH_SHORT).show();
                     // Clear the EditText fields for re-entering the passwords
                     editTextPassword1.setText("");
@@ -115,7 +112,7 @@ public class signUpActivity extends AppCompatActivity {
         });
     }
     public void writeNewUser(String userId, String name, String email) {
-        user user = new user(name, email);
+        user user = new user(name, email );
 
         mDatabase.child("users").child(userId).setValue(user);
     }

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,6 +23,7 @@ public class signInActivity extends AppCompatActivity {
     Button buttonlogin;
     FirebaseAuth mAuth;
     ProgressBar progressBar;
+    TextView reset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +34,22 @@ public class signInActivity extends AppCompatActivity {
         inputP1 = findViewById(R.id.inputP1);
         buttonlogin = findViewById(R.id.singInButton);
         progressBar = findViewById(R.id.progressBar);
+        reset = findViewById(R.id.forgotten);
 
         mAuth = FirebaseAuth.getInstance();
+
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
 
         buttonlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
                 String email = inputE2.getText().toString();
                 String password = inputP1.getText().toString();
 
@@ -57,7 +68,6 @@ public class signInActivity extends AppCompatActivity {
                         .addOnCompleteListener(signInActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
                                     Toast.makeText(signInActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();

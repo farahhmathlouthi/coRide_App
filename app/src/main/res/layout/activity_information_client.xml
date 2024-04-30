@@ -171,10 +171,9 @@
         android:layout_width="352dp"
         android:layout_height="26dp"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/inputprenom"
+        app:layout_constraintBottom_toTopOf="@+id/inputN"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputusername" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/prenomcontrole"
@@ -197,7 +196,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputemail"
+        app:layout_constraintTop_toBottomOf="@+id/inputPhone"
         app:layout_constraintVertical_bias="0.363" />
 
 

@@ -1,9 +1,13 @@
 package com.example.corideapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,41 +32,82 @@ public class Information_client extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
     private FirebaseUser currentUser;
-    String address,phone,surname;
+    RadioGroup radioGroup;
+    private RadioButton op1,op2;
+    String address,phone,surname,userId;
     // ...
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information_client);
 
-
         // Finding the continue button
         continueButton = findViewById(R.id.button);
+        radioGroup = findViewById(R.id.radioGroup);
         editU = findViewById(R.id.inputName);
         editA = findViewById(R.id.inputAdress);
         editP = findViewById(R.id.inputPhone);
+        op1 = findViewById(R.id.buttonMale);
+        op2 = findViewById(R.id.buttonFemale);
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseApp.initializeApp(this);
-        mDatabase = FirebaseDatabase.getInstance().getReference("users");
-        currentUser = mAuth.getCurrentUser();
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("users");
+
+
+
+        editU.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    // If the EditText loses focus
+                    String username = editU.getText().toString().trim();
+                    if (TextUtils.isEmpty(username)) {
+                        // If the EditText is empty, display a Toast
+                        Toast.makeText(Information_client.this, "You Need To Enter A User Name", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+        editA.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    // If the EditText loses focus
+                    String address1 = editA.getText().toString().trim();
+                    if (TextUtils.isEmpty(address1)) {
+                        // If the EditText is empty, display a Toast
+                        Toast.makeText(Information_client.this, "You Need To Enter An Address", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+        editP.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    // If the EditText loses focus
+                    String phone1 = editP.getText().toString().trim();
+                    if (TextUtils.isEmpty(phone1)) {
+                        // If the EditText is empty, display a Toast
+                        Toast.makeText(Information_client.this, "You Need TO Enter A Phone Number", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
 
         // Setting OnClickListener for the continue button
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // Initialize the validation status to true
+                boolean isValid = true;
                 // Validation du nom
                 address = editA.getText().toString().trim();
                 phone = editP.getText().toString().trim();
                 surname = editU.getText().toString().trim();
 
-                if (address.isEmpty() ) {
-                    // Afficher le message de validation du nom
-                    TextView addressValidationMessage = findViewById(R.id.inputAdress);
-                    addressValidationMessage.setVisibility(View.VISIBLE);
-                    addressValidationMessage.setText(R.string.name_validation_message);
-                    return; // Stop execution if validation fails
-                }
 
                 // Validation du prénom
                 surname = editU.getText().toString().trim();
@@ -71,8 +116,19 @@ public class Information_client extends AppCompatActivity {
                     TextView surnameValidationMessage = findViewById(R.id.prenomcontrole);
                     surnameValidationMessage.setVisibility(View.VISIBLE);
                     surnameValidationMessage.setText(R.string.surname_validation_message);
+                    isValid = false;
                     return;
                 }
+
+                if (address.isEmpty() ) {
+                    // Afficher le message de validation du nom
+                    TextView addressValidationMessage = findViewById(R.id.inputAdress);
+                    addressValidationMessage.setVisibility(View.VISIBLE);
+                    addressValidationMessage.setText(R.string.name_validation_message);
+                    isValid = false;
+                    return; // Stop execution if validation fails
+                }
+
 
                 // Validation de l'e-mail
                 if (phone.isEmpty()) {
@@ -80,34 +136,53 @@ public class Information_client extends AppCompatActivity {
                     TextView userNameValidationMessage = findViewById(R.id.emailcontrole);
                     userNameValidationMessage.setVisibility(View.VISIBLE);
                     userNameValidationMessage.setText(R.string.email_validation_message);
+                    isValid = false;
                     return;
                 }
 
+
+                if (radioGroup.getCheckedRadioButtonId() == -1) {
+                    // No RadioButton is selected
+                    Toast.makeText(Information_client.this, "Please select a gender option", Toast.LENGTH_SHORT).show();
+                    isValid = false;
+                    return;
+                }
                 // If all validations pass, continue with desired action (e.g., navigating to another activity)
 
-                if (currentUser != null) {
-                    String userId = currentUser.getUid();
+                userId = mAuth.getCurrentUser().getUid();
+                currentUser = mAuth.getCurrentUser();
 
-                    // Write the user data to Firebase
-                    writeAdditionalUserInfo(userId, address, phone, surname);
+                if (isValid) {
+                    userId = mAuth.getCurrentUser().getUid();
+                    currentUser = mAuth.getCurrentUser();
+
+                    if (currentUser != null) {
+                        DatabaseReference userRef = mDatabase.child(userId);
+
+                        // Write the user data to Firebase
+                        writeAdditionalUserInfo(userRef, address, phone, surname);
+                    }
                 }
             }
         });
     }
 
-    private void writeAdditionalUserInfo(String userId, String address, String phone, String surname) {
+    private void writeAdditionalUserInfo(DatabaseReference userRef, String address, String phone, String surname) {
         // Create a Map to store additional user information
         Map<String, Object> additionalInfo = new HashMap<>();
         additionalInfo.put("address", address);
         additionalInfo.put("phone", phone);
         additionalInfo.put("surname", surname);
+
         // Write the additional information to the database
-        mDatabase.child(userId).setValue(additionalInfo)
+        userRef.updateChildren(additionalInfo)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         // Data successfully added
                         Toast.makeText(Information_client.this, "Additional information added successfully.", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(Information_client.this, Home.class);
+                        startActivity(intent);
                         // Optionally, go to the next activity or do something else
                     }
                 })

@@ -3,8 +3,10 @@ package com.example.corideapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -31,6 +33,8 @@ public class signUpActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
     private ProgressBar SP;
+    String email,name , password, password2;
+    CheckBox checkBox1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +43,6 @@ public class signUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         signUpB = findViewById(R.id.signUpButton);
         editTextName = findViewById(R.id.inputN);
@@ -47,40 +50,109 @@ public class signUpActivity extends AppCompatActivity {
         editTextPassword1 = findViewById(R.id.inputP2);
         editTextPassword2 = findViewById(R.id.inputP3);
         SP = findViewById(R.id.progressBarSignUp);
+        checkBox1 = findViewById(R.id.terms);
+        editTextName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    // If the EditText loses focus
+                    String name = editTextName.getText().toString().trim();
+                    if (TextUtils.isEmpty(name)) {
+                        // If the EditText is empty, display a Toast
+                        Toast.makeText(signUpActivity.this, "You Need To Enter Your Full Name", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+        editTextEmail.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    // If the EditText loses focus
+                    String name = editTextEmail.getText().toString().trim();
+                    if (TextUtils.isEmpty(name)) {
+                        // If the EditText is empty, display a Toast
+                        Toast.makeText(signUpActivity.this, "You Need To Enter Your Email", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+        editTextPassword1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    // If the EditText loses focus
+                    String name = editTextPassword1.getText().toString().trim();
+                    if (TextUtils.isEmpty(name)) {
+                        // If the EditText is empty, display a Toast
+                        Toast.makeText(signUpActivity.this, "You Need To Enter Your Password", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+        editTextPassword2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    // If the EditText loses focus
+                    String name = editTextPassword2.getText().toString().trim();
+                    if (TextUtils.isEmpty(name)) {
+                        // If the EditText is empty, display a Toast
+                        Toast.makeText(signUpActivity.this, "You Need TO Re-Enter Your Password", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
 
         signUpB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SP.setVisibility(View.VISIBLE);
-                String email,name , password, password2;
-                email = editTextEmail.getText().toString();
+
                 name = editTextName.getText().toString();
+                email = editTextEmail.getText().toString();
                 password = editTextPassword1.getText().toString().trim();
                 password2 = editTextPassword2.getText().toString().trim();
+                int paddingTop = 100;
 
-                if (TextUtils.isEmpty(email)) {
-
-                    Toast.makeText(signUpActivity.this,"Enter Your Email",Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(name)) {
+                    Toast toast = Toast.makeText(signUpActivity.this, "Enter Your Name", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, paddingTop);
+                    toast.show();
                     SP.setVisibility(View.GONE);
                     return;
-                }
-                if (TextUtils.isEmpty(password) || TextUtils.isEmpty(password2)) {
-                    Toast.makeText(signUpActivity.this, "Please enter both passwords.", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(email)) {
+                    Toast toast = Toast.makeText(signUpActivity.this, "Enter Your Email", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, paddingTop);
+                    toast.show();
                     SP.setVisibility(View.GONE);
                     return;
-                }
-                if (!password.equals(password2)) {
-                    Toast.makeText(signUpActivity.this, "Passwords do not match. Please re-enter.", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(password) || TextUtils.isEmpty(password2)) {
+                    Toast toast = Toast.makeText(signUpActivity.this, "Please enter both passwords.", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, paddingTop);
+                    toast.show();
+                    SP.setVisibility(View.GONE);
+                    return;
+                } else if (!password.equals(password2)) {
+                    Toast toast = Toast.makeText(signUpActivity.this, "Passwords do not match. Please re-enter.", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, paddingTop);
+                    toast.show();
                     // Clear the EditText fields for re-entering the passwords
                     editTextPassword1.setText("");
                     editTextPassword2.setText("");
                     SP.setVisibility(View.GONE);
                     return;
+                } else if (!checkBox1.isChecked()) {
+                    Toast toast = Toast.makeText(signUpActivity.this, "Please check the checkbox.", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, paddingTop);
+                    toast.show();
                 } else {
                     // Passwords match, proceed with sign-up logic
                     Toast.makeText(signUpActivity.this, "Passwords match. Proceed with sign-up.", Toast.LENGTH_SHORT).show();
                     // Add your sign-up logic here
                 }
+
+
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
@@ -97,9 +169,8 @@ public class signUpActivity extends AppCompatActivity {
                                     // Add more information if needed
                                     userRef.setValue(userInfo);
                                     Toast.makeText(signUpActivity.this, "Account Created.", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(),Information_client.class);
+                                    Intent intent = new Intent(signUpActivity.this, loading3.class);
                                     startActivity(intent);
-                                    finish();
 
                                 } else {
                                     // If sign in fails, display a message to the user.
@@ -113,7 +184,6 @@ public class signUpActivity extends AppCompatActivity {
     }
     public void writeNewUser(String userId, String name, String email) {
         user user = new user(name, email );
-
         mDatabase.child("users").child(userId).setValue(user);
     }
 }

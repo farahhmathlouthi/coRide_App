@@ -108,22 +108,29 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_width="308dp"
+        android:layout_height="63dp"
         android:layout_marginTop="41dp"
         android:layout_marginBottom="10dp"
         android:hapticFeedbackEnabled="true"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintHorizontal_bias="0.446"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputemail"
-        app:layout_constraintVertical_bias="0.24">
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="singInButton" />
 
         <RadioButton
             android:id="@+id/buttonMale"
-            android:layout_width="wrap_content"
+            android:layout_width="91dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="20dp"
@@ -134,7 +141,7 @@
 
         <RadioButton
             android:id="@+id/buttonFemale"
-            android:layout_width="wrap_content"
+            android:layout_width="97dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="50dp"

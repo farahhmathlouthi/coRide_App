@@ -41,7 +41,7 @@
             android:layout_height="60dp"
             android:fontFamily="@font/montserrat_light"
             android:text=" Marahbé to"
-            android:textColor="#00BCD4"
+            android:textColor="@color/greenoba"
             android:textColorLink="#2196F3"
             android:textSize="34sp" />
 

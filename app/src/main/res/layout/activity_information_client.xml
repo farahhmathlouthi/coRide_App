@@ -50,7 +50,7 @@
         android:backgroundTint="@color/gr"
         android:drawableLeft="@drawable/name2"
         android:ems="10"
-        android:hint="Name"
+        android:hint="  User Name"
         android:inputType="text"
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
@@ -71,7 +71,7 @@
         android:backgroundTint="@color/gr"
         android:drawableLeft="@drawable/name"
         android:ems="10"
-        android:hint="Surname"
+        android:hint="  User Name"
         android:inputType="text"
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
@@ -94,7 +94,7 @@
         android:backgroundTint="@color/gr"
         android:drawableLeft="@drawable/email"
         android:ems="10"
-        android:hint="Email"
+        android:hint="  Phone Number"
         android:inputType="textEmailAddress"
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
@@ -108,8 +108,8 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="308dp"
-        android:layout_height="63dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="41dp"
         android:layout_marginBottom="10dp"
         android:hapticFeedbackEnabled="true"
@@ -121,34 +121,26 @@
         app:layout_constraintTop_toBottomOf="@+id/inputemail"
         app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="singInButton" />
 
         <RadioButton
             android:id="@+id/buttonMale"
-            android:layout_width="91dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/input_bg"
             android:backgroundTint="@color/gr"
             android:button="@drawable/male"
-            android:text="  Male  " /> <!-- Adjust margin as needed -->
+            android:text="   Male  " /> <!-- Adjust margin as needed -->
 
         <RadioButton
             android:id="@+id/buttonFemale"
-            android:layout_width="97dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="50dp"
             android:background="@drawable/input_bg"
             android:backgroundTint="@color/gr"
             android:button="@drawable/female"
-            android:text="Female  " />
+            android:text=" Female  " />
     </RadioGroup>
 
     <Button

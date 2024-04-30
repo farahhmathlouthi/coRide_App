@@ -113,7 +113,6 @@ public class signUpActivity extends AppCompatActivity {
                         });
             }
         });
-
     }
     public void writeNewUser(String userId, String name, String email) {
         user user = new user(name, email);

@@ -21,12 +21,6 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Owners"
-            android:exported="false" />
-        <activity
-            android:name=".About_Us"
-            android:exported="false" />
-        <activity
             android:name=".signInActivity"
             android:exported="true" />
         <activity

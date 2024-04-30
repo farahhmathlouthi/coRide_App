@@ -21,8 +21,8 @@ import com.google.firebase.auth.FirebaseAuth;
 public class signUpActivity extends AppCompatActivity {
 
 
-    EditText editTextEmail , editTextPassword , editTextName;
-    Button signUpB;
+    private EditText editTextEmail , editTextPassword1 , editTextName, editTextPassword2;
+    private Button signUpB;
     FirebaseAuth mAuth;
     ProgressBar SP;
 
@@ -31,30 +31,47 @@ public class signUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_signup);
+
         mAuth = FirebaseAuth.getInstance();
 
         signUpB = findViewById(R.id.signUpButton);
         editTextName = findViewById(R.id.inputN);
         editTextEmail = findViewById(R.id.inputE2);
-        editTextPassword = findViewById(R.id.inputP2);
+        editTextPassword1 = findViewById(R.id.inputP2);
+        editTextPassword2 = findViewById(R.id.inputP3);
         SP = findViewById(R.id.progressBarSignUp);
+
         signUpB.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     SP.setVisibility(View.VISIBLE);
-                    String email, password;
-                    email = String.valueOf(editTextEmail.getText());
-                    password = String.valueOf(editTextPassword.getText());
+                    String email, password, password2;
+                    email = editTextEmail.getText().toString();
+                    password = editTextPassword1.getText().toString().trim();
+                    password2 = editTextPassword2.getText().toString().trim();
 
                     if (TextUtils.isEmpty(email)) {
 
                         Toast.makeText(signUpActivity.this,"Enter Your Email",Toast.LENGTH_SHORT).show();
+                        SP.setVisibility(View.GONE);
                         return;
                     }
-                    if (TextUtils.isEmpty(password)) {
-
-                        Toast.makeText(signUpActivity.this,"Enter Your Password",Toast.LENGTH_SHORT).show();
+                    if (TextUtils.isEmpty(password) || TextUtils.isEmpty(password2)) {
+                        Toast.makeText(signUpActivity.this, "Please enter both passwords.", Toast.LENGTH_SHORT).show();
+                        SP.setVisibility(View.GONE);
                         return;
+                    }
+                    else if (!password.equals(password2)) {
+                        Toast.makeText(signUpActivity.this, "Passwords do not match. Please re-enter.", Toast.LENGTH_SHORT).show();
+                        // Clear the EditText fields for re-entering the passwords
+                        editTextPassword1.setText("");
+                        editTextPassword2.setText("");
+                        SP.setVisibility(View.GONE);
+                        return;
+                    } else {
+                        // Passwords match, proceed with sign-up logic
+                        Toast.makeText(signUpActivity.this, "Passwords match. Proceed with sign-up.", Toast.LENGTH_SHORT).show();
+                        // Add your sign-up logic here
                     }
                     mAuth.createUserWithEmailAndPassword(email, password)
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -75,7 +92,6 @@ public class signUpActivity extends AppCompatActivity {
                                     }
                                 }
                             });
-
                 }
         });
     }

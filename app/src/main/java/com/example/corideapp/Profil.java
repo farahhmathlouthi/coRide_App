@@ -1,47 +1,58 @@
 package com.example.corideapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Profil extends AppCompatActivity {
+
+    FirebaseAuth auth;
+    Button log;
+    FirebaseAuth user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_profil);
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
-        bottomNavigationView.setSelectedItemId(R.id.bottom_profile);
 
 
-        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
+        auth = FirebaseAuth.getInstance();
+        log = findViewById(R.id.logout);
+        user = auth;
+        ImageView backButton = findViewById(R.id.back1);
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                if (item.getItemId() == R.id.bottom_home) {
-                    startActivity(new Intent(getApplicationContext(), Home.class));
-                    overridePendingTransition(R.animator.slide_in_right, R.animator.slide_to_left);
-                    finish();
-                    return true;
-                } else if (item.getItemId() == R.id.bottom_planning) {
-                    startActivity(new Intent(getApplicationContext(), Planning.class));
-                    overridePendingTransition(R.animator.slide_in_right, R.animator.slide_to_left);
-                    finish();
-                    return true;
-                } else if (item.getItemId() == R.id.bottom_favoris) {
-                    startActivity(new Intent(getApplicationContext(), Favoris.class));
-                    overridePendingTransition(R.animator.slide_in_right, R.animator.slide_to_left);
-                    finish();
-                    return true;
-                } else if (item.getItemId() == R.id.bottom_profile) {
-                    return true;
-                }
-                return false;
+            public void onClick(View v) {
+                finish(); // Navigate back to the previous activity
+            }
+        });
+
+
+        if (user == null) {
+            Intent intent = new Intent(getApplicationContext(), signInActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
+        log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getApplicationContext(), signInActivity.class);
+                startActivity(intent);
+                finish();
+
             }
         });
 
     }
+
 }

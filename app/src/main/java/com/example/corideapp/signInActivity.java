@@ -30,8 +30,18 @@ public class signInActivity extends AppCompatActivity {
     Button buttonlogin;
     FirebaseAuth mAuth ;
     ProgressBar progressBar;
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Intent intent=new Intent(getApplicationContext(), Home.class);
+            startActivity(intent);
+            finish();
 
-
+        }
+    }
 
 
 
@@ -49,8 +59,8 @@ public class signInActivity extends AppCompatActivity {
             public void onClick(View v) {
                 progressBar.setVisibility(View.VISIBLE);
                 String email,password ;
-                email = inputE2.getText().toString();
-                password=inputP1.getText().toString();
+                email = String.valueOf(inputE2.getText());
+                password=String.valueOf(inputP1.getText());
                 if(TextUtils.isEmpty(email)){
                     Toast.makeText(signInActivity.this, "Salah l'email L'anjik", Toast.LENGTH_SHORT).show();
                     return;

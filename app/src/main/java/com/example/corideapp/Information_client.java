@@ -38,7 +38,7 @@ public class Information_client extends AppCompatActivity {
     private RadioButton op1,op2;
     String address,phone,surname,userId;
     private String gender;
-    private Databasehelper databasehelper;
+    private DataBaseHelper1 databasehelper;
 
 
 
@@ -61,7 +61,7 @@ public class Information_client extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseApp.initializeApp(this);
         mDatabase = FirebaseDatabase.getInstance().getReference().child("users");
-        databasehelper = new Databasehelper(this);
+        databasehelper = new DataBaseHelper1(this);
 
 
         editU.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -171,9 +171,10 @@ public class Information_client extends AppCompatActivity {
                         writeAdditionalUserInfo(userRef, address, phone, surname);
                     }
                 }
+                addData();
             }
         });
-        addData();
+
 
     }
     public void onSave(View view){
@@ -214,9 +215,8 @@ public class Information_client extends AppCompatActivity {
                 });
     }
     public void addData(){
-        continueButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
+
+
                 boolean isInserted = databasehelper.insertUserData(editU.getText().toString(),editA.getText().toString(),editP.getText().toString(), gender) ;
                 if (isInserted){
                     Toast.makeText(Information_client.this,"Data Inserted Yaatiik Saha",Toast.LENGTH_SHORT).show();
@@ -226,7 +226,5 @@ public class Information_client extends AppCompatActivity {
 
                 }
 
-            }
-        });
     }
 }

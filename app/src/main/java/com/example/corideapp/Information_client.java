@@ -24,8 +24,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Map;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 
 public class Information_client extends AppCompatActivity {
 
@@ -217,14 +215,14 @@ public class Information_client extends AppCompatActivity {
     public void addData(){
 
 
-                boolean isInserted = databasehelper.insertUserData(editU.getText().toString(),editA.getText().toString(),editP.getText().toString(), gender) ;
-                if (isInserted){
-                    Toast.makeText(Information_client.this,"Data Inserted Yaatiik Saha",Toast.LENGTH_SHORT).show();
+        boolean isInserted = databasehelper.insertUserData(editU.getText().toString(),editA.getText().toString(),editP.getText().toString(), gender) ;
+        if (isInserted){
+            Toast.makeText(Information_client.this,"Data Inserted Yaatiik Saha",Toast.LENGTH_SHORT).show();
 
-                }else{
-                    Toast.makeText(Information_client.this,"Something went wrong Lahtha barka",Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(Information_client.this,"Something went wrong Lahtha barka",Toast.LENGTH_SHORT).show();
 
-                }
+        }
 
     }
 }

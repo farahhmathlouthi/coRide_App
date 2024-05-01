@@ -15,7 +15,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -23,24 +25,32 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
 public class rideGiver extends AppCompatActivity {
 
-    EditText depart1;
-    EditText arrive1;
-    Button continueD;
+    EditText depart1, arrive1, place;
+    Button continueD,viewtrip1;
     Drawable logoDrawable;
+    String userid;
     int selectedYear1, selectedMonth1, selectedDayOfMonth1;
     int year1, month1, dayOfMonth1;
-    TextView editime1, editdate1;
+    private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
+    TextView editime1, editdate1,editPlace;
     int t1Hour1, t1Minute1, t2Hour, t2Minute;
     private final static int MAP_REQUEST_CODE = 999;
     @Override
@@ -51,9 +61,31 @@ public class rideGiver extends AppCompatActivity {
         // Initialize views
         depart1 = findViewById(R.id.depart1);
         arrive1 = findViewById(R.id.arrive1);
-        continueD = findViewById(R.id.continueD);
+        continueD = findViewById(R.id.sendR1);
+
+        editime1 = findViewById(R.id.editime1); // Initialize editime TextView
+        editdate1 = findViewById(R.id.editdate1); // Initialize editdate TextView
+        editPlace = findViewById(R.id.editplace);
+        viewtrip1 = findViewById(R.id.continueD1);
+        place = findViewById(R.id.main);
+
+        // Get input from EditText fields
+        String departure1 = depart1.getText().toString();
+        String arrival1 = arrive1.getText().toString();
+        String date1 = editdate1.getText().toString();
+        String time1 = editime1.getText().toString();
+        String places = place.getText().toString();
+        int number1 = Integer.parseInt(place.getText().toString());
+
+        mAuth = FirebaseAuth.getInstance();
 
 
+        viewtrip1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawTrack(depart1.getText().toString(), arrive1.getText().toString());
+            }
+        });
         depart1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,13 +104,21 @@ public class rideGiver extends AppCompatActivity {
             }
         });
 
+
         continueD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // calling a method to draw a track on google maps.
-                drawTrack(depart1.getText().toString(), arrive1.getText().toString());
+
+
+                // Save ride request to Firebase
+                saveRideRequestToFirebase(departure1, arrival1, date1, time1, places);
+                Intent intent = new Intent(rideGiver.this, Home.class);
+                startActivity(intent);
+                finish();
+
             }
         });
+
         editime1 = findViewById(R.id.editime1);
         editdate1 = findViewById(R.id.editdate1);
 
@@ -165,6 +205,46 @@ public class rideGiver extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    private void saveRideRequestToFirebase(String departure, String arrival, String date, String time, String place) {
+        if (departure.isEmpty() || arrival.isEmpty() || date.isEmpty() || time.isEmpty() || place.isEmpty() ) {
+            Toast.makeText(rideGiver.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        DatabaseReference rideRequestsRef = FirebaseDatabase.getInstance().getReference().child("give_ride_requests");
+
+        // Get the current user's unique identifier (e.g., user ID)
+        String userId = mAuth.getCurrentUser().getUid();
+        // Create a HashMap to store ride request details
+        HashMap<String, Object> rideRequestMap = new HashMap<>();
+        rideRequestMap.put("departure", departure);
+        rideRequestMap.put("arrival", arrival);
+        rideRequestMap.put("date", date);
+        rideRequestMap.put("time", time);
+        rideRequestMap.put("UserId", userid);
+
+        // Push the ride request to Firebase
+        rideRequestsRef.push().setValue(rideRequestMap)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        // Ride request saved successfully
+                        Toast.makeText(rideGiver.this, "Give-Ride request created successfully", Toast.LENGTH_SHORT).show();
+                        // Optionally, you can navigate to another activity or perform additional actions here
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Failed to save ride request
+                        Toast.makeText(rideGiver.this, "Failed to create Give-ride request", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+
     }
 
     private void drawTrack(String source, String destination) {

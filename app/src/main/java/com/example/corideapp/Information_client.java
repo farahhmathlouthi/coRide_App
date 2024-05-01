@@ -24,6 +24,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Map;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 
 public class Information_client extends AppCompatActivity {
 
@@ -35,6 +37,11 @@ public class Information_client extends AppCompatActivity {
     RadioGroup radioGroup;
     private RadioButton op1,op2;
     String address,phone,surname,userId;
+    private String gender;
+    private Databasehelper databasehelper;
+
+
+
     // ...
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +57,11 @@ public class Information_client extends AppCompatActivity {
         op1 = findViewById(R.id.buttonMale);
         op2 = findViewById(R.id.buttonFemale);
 
+
         mAuth = FirebaseAuth.getInstance();
         FirebaseApp.initializeApp(this);
         mDatabase = FirebaseDatabase.getInstance().getReference().child("users");
-
+        databasehelper = new Databasehelper(this);
 
 
         editU.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -165,12 +173,19 @@ public class Information_client extends AppCompatActivity {
                 }
             }
         });
+        addData();
 
     }
-
-
-
-
+    public void onSave(View view){
+        if(op1.isChecked()){
+            gender="Male";
+        }else if(op2.isChecked()){
+            gender = "Female";
+        }else{
+            Toast.makeText(this, "Please select a gender", Toast.LENGTH_SHORT).show();
+            return;
+        }
+    }
     private void writeAdditionalUserInfo(DatabaseReference userRef, String address, String phone, String surname) {
         // Create a Map to store additional user information
         Map<String, Object> additionalInfo = new HashMap<>();
@@ -197,5 +212,21 @@ public class Information_client extends AppCompatActivity {
                         Toast.makeText(Information_client.this, "Failed to add additional information.", Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+    public void addData(){
+        continueButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                boolean isInserted = databasehelper.insertUserData(editU.getText().toString(),editA.getText().toString(),editP.getText().toString(), gender) ;
+                if (isInserted){
+                    Toast.makeText(Information_client.this,"Data Inserted Yaatiik Saha",Toast.LENGTH_SHORT).show();
+
+                }else{
+                    Toast.makeText(Information_client.this,"Something went wrong Lahtha barka",Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+        });
     }
 }

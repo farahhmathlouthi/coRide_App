@@ -25,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class signUpActivity extends AppCompatActivity {
 
 
@@ -35,6 +36,7 @@ public class signUpActivity extends AppCompatActivity {
     private ProgressBar SP;
     String email,name , password, password2;
     CheckBox checkBox1;
+    private Databasehelper databasehelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class signUpActivity extends AppCompatActivity {
         editTextPassword2 = findViewById(R.id.inputP3);
         SP = findViewById(R.id.progressBarSignUp);
         checkBox1 = findViewById(R.id.terms);
+        databasehelper = new Databasehelper(this);
         editTextName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -180,10 +183,29 @@ public class signUpActivity extends AppCompatActivity {
                             }
                         });
             }
+
         });
+
     }
     public void writeNewUser(String userId, String name, String email) {
         user user = new user(name, email );
         mDatabase.child("users").child(userId).setValue(user);
     }
+    public void addData(){
+        signUpB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean isInserted = databasehelper.insertUserInfoData(editTextName.getText().toString(), editTextEmail.getText().toString());
+                if (isInserted) {
+                    Toast.makeText(signUpActivity.this, "Data Inserted Yaatiik Saha", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    Toast.makeText(signUpActivity.this, "Something went wrong Lahtha barka", Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+        });
+
+    };
 }

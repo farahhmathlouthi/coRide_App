@@ -165,7 +165,11 @@ public class Information_client extends AppCompatActivity {
                 }
             }
         });
+
     }
+
+
+
 
     private void writeAdditionalUserInfo(DatabaseReference userRef, String address, String phone, String surname) {
         // Create a Map to store additional user information

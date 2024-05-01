@@ -16,7 +16,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="69dp"
         android:layout_marginEnd="69dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="4dp"
         android:text="Your Location Is Confidential ! "
         android:textAlignment="center"
         android:textColor="@color/grey2"
@@ -26,11 +26,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
-        android:layout_width="412dp"
-        android:layout_height="786dp"
+        android:layout_width="411dp"
+        android:layout_height="779dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="3dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,7 +78,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="399dp"
+            android:layout_height="384dp"
             android:layout_margin="10dp"
             android:orientation="vertical">
 
@@ -95,7 +95,7 @@
                 android:id="@+id/depart1"
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
-                android:layout_margin="15dp"
+                android:layout_margin="10dp"
                 android:backgroundTint="@color/green3"
                 android:drawableLeft="@drawable/logo"
                 android:drawablePadding="8dp"
@@ -107,7 +107,7 @@
                 android:id="@+id/textView12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_margin="10dp"
                 android:text="Arrival Point:"
                 android:textColor="@color/green3"
                 android:textSize="23dp" />
@@ -188,18 +188,29 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/continueD"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="47dp"
-            android:layout_marginStart="57dp"
-            android:layout_marginEnd="57dp"
-            android:layout_marginBottom="97dp"
-            android:backgroundTint="@color/green3"
-            android:paddingHorizontal="120dp"
-            android:text="continue"
-            tools:layout_editor_absoluteX="57dp"
-            tools:layout_editor_absoluteY="843dp" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/continueD"
+                android:layout_width="150dp"
+                android:layout_height="47dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/green3"
+                android:text="See Trip" />
+
+            <Button
+                android:id="@+id/sendR"
+                android:layout_width="150dp"
+                android:layout_height="47dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/green3"
+                android:text="Send Request" />
+        </LinearLayout>
     </LinearLayout>
 
 

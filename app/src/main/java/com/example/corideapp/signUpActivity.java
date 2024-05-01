@@ -194,14 +194,14 @@ public class signUpActivity extends AppCompatActivity {
         mDatabase.child("users").child(userId).setValue(user);
     }
     public void addData(){
-                boolean isInserted = databasehelper.insertUserInfoData(editTextName.getText().toString(), editTextEmail.getText().toString());
-                if (isInserted) {
-                    Toast.makeText(signUpActivity.this, "Data Inserted Yaatiik Saha", Toast.LENGTH_SHORT).show();
+        boolean isInserted = databasehelper.insertUserInfoData(editTextName.getText().toString(), editTextEmail.getText().toString());
+        if (isInserted) {
+            Toast.makeText(signUpActivity.this, "Data Inserted Yaatiik Saha", Toast.LENGTH_SHORT).show();
 
-                } else {
-                    Toast.makeText(signUpActivity.this, "Something went wrong Lahtha barka", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(signUpActivity.this, "Something went wrong Lahtha barka", Toast.LENGTH_SHORT).show();
 
-                }
+        }
 
     }
 };

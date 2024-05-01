@@ -1,15 +1,18 @@
 package com.example.corideapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Planning extends AppCompatActivity {
 
+    Button rideTakerButton,rideGiverButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +20,24 @@ public class Planning extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
         bottomNavigationView.setSelectedItemId(R.id.bottom_planning);
+
+
+        rideTakerButton = findViewById(R.id.ride_taker_button);
+        rideGiverButton = findViewById(R.id.ride_giver_button);
+
+        rideTakerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Planning.this, rideRequests.class));
+            }
+        });
+
+        rideGiverButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Planning.this, give_RideRequest.class));
+            }
+        });
 
 
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {

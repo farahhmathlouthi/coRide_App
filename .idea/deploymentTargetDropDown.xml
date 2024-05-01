@@ -5,16 +5,16 @@
       <entry key="Information_client">
         <State />
       </entry>
-      <entry key="Planning">
+      <entry key="MainActivity">
         <State />
       </entry>
       <entry key="app">
         <State />
       </entry>
-      <entry key="page_info_personnel">
+      <entry key="rideGiver">
         <State />
       </entry>
-      <entry key="signUpActivity">
+      <entry key="rideTaker">
         <State />
       </entry>
     </value>

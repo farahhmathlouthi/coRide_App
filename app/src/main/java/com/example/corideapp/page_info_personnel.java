@@ -13,13 +13,13 @@ import android.widget.Toast;
 public class page_info_personnel extends AppCompatActivity {
     EditText full, email, user, adresse, phone, gender;
     Button view;
-    private DataBaseHelper1 databasehelper;
+    private DataBase databasehelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page_info_personnel);
-        databasehelper = new DataBaseHelper1(this);
+        databasehelper = new DataBase(this);
 
         full = findViewById(R.id.e1);
         email = findViewById(R.id.e2);
@@ -35,7 +35,7 @@ public class page_info_personnel extends AppCompatActivity {
                 SQLiteDatabase db = databasehelper.getReadableDatabase();
 
                 // Get data from user_info table
-                Cursor cursorUserInfo = DataBaseHelper1.getdataUserInfo(db);
+                Cursor cursorUserInfo = DataBase.getdataUserInfo(db);
                 if (cursorUserInfo.moveToFirst()) {
                     String fullname = cursorUserInfo.getString(cursorUserInfo.getColumnIndex("fullname"));
                     String emailText = cursorUserInfo.getString(cursorUserInfo.getColumnIndex("email"));
@@ -47,7 +47,7 @@ public class page_info_personnel extends AppCompatActivity {
                 cursorUserInfo.close();
 
                 // Get data from users table
-                Cursor cursorUsers = DataBaseHelper1.getdataUsers(db);
+                Cursor cursorUsers = DataBase.getdataUsers(db);
                 if (cursorUsers.moveToFirst()) {
                     String username = cursorUsers.getString(cursorUsers.getColumnIndex("username"));
                     String address = cursorUsers.getString(cursorUsers.getColumnIndex("address"));

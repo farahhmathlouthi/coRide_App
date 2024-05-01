@@ -20,13 +20,15 @@
         android:text="View Information"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.427"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        app:layout_constraintVertical_bias="0.4" />
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="282dp"
-        android:layout_height="453dp"
+        android:layout_width="267dp"
+        android:layout_height="427dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="4dp"
@@ -37,7 +39,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/user"
         app:layout_constraintTop_toBottomOf="@+id/imageView8"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
         <EditText
             android:id="@+id/e1"
@@ -117,8 +119,8 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="187dp"
-        android:layout_height="257dp"
+        android:layout_width="182dp"
+        android:layout_height="188dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"

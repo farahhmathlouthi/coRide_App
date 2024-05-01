@@ -8,7 +8,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class DataBaseHelper1 extends SQLiteOpenHelper {
+import java.util.ArrayList;
+import java.util.List;
+
+public class DataBase extends SQLiteOpenHelper {
     private static final String DATABASE_NAME="INFO_PERSONNEL";
     private static final String TABLE_USERS = "users";
     private static final String TABLE_USER_INFO = "user_info";
@@ -39,7 +42,7 @@ public class DataBaseHelper1 extends SQLiteOpenHelper {
 
 
 
-    public DataBaseHelper1( @Nullable Context context) {
+    public DataBase( @Nullable Context context) {
         super( context,DATABASE_NAME,null,1);
     }
 
@@ -107,6 +110,7 @@ public class DataBaseHelper1 extends SQLiteOpenHelper {
         return cursorUsers;
 
     }
+
 
 
 

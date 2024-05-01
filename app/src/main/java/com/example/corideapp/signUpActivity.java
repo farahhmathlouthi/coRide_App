@@ -36,7 +36,7 @@ public class signUpActivity extends AppCompatActivity {
     private ProgressBar SP;
     String email,name , password, password2;
     CheckBox checkBox1;
-    private DataBaseHelper1 databasehelper;
+    private DataBase databasehelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +53,7 @@ public class signUpActivity extends AppCompatActivity {
         editTextPassword2 = findViewById(R.id.inputP3);
         SP = findViewById(R.id.progressBarSignUp);
         checkBox1 = findViewById(R.id.terms);
-        databasehelper = new DataBaseHelper1(this);
+        databasehelper = new DataBase(this);
         editTextName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {

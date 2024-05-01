@@ -38,7 +38,7 @@ public class Information_client extends AppCompatActivity {
     private RadioButton op1,op2;
     String address,phone,surname,userId;
     private String gender;
-    private DataBaseHelper1 databasehelper;
+    private DataBase databasehelper;
 
 
 
@@ -61,7 +61,7 @@ public class Information_client extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseApp.initializeApp(this);
         mDatabase = FirebaseDatabase.getInstance().getReference().child("users");
-        databasehelper = new DataBaseHelper1(this);
+        databasehelper = new DataBase(this);
 
 
         editU.setOnFocusChangeListener(new View.OnFocusChangeListener() {

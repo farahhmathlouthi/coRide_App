@@ -7,121 +7,132 @@
     android:background="@color/light_blue"
     tools:context=".Owners">
 
+
     <TextView
         android:id="@+id/about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="80dp"
-        android:layout_marginBottom="13dp"
         android:fontFamily="@font/montserrat_light"
         android:text="Owners"
         android:textColor="@color/blue2"
         android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView12"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="136dp"
-        android:layout_height="324dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/farah"
-        app:layout_constraintEnd_toStartOf="@+id/imageView12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about"
-        app:srcCompat="@drawable/asma1" />
-
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="140dp"
-        android:layout_height="324dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/asma"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView11"
-        app:layout_constraintTop_toBottomOf="@+id/about"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/farah2" />
-
-    <TextView
-        android:id="@+id/farah"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="30dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="AsmaBenHamouda"
-        android:textColor="@color/green3"
-        app:layout_constraintEnd_toStartOf="@+id/asma"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
-
-    <TextView
-        android:id="@+id/asma"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="54dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="FarahMathlouthi"
-        android:textColor="@color/green3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/farah"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="384dp"
-        android:layout_height="132dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="50dp"
-        android:text=" Meet Asma (20) and Farah (20), Isamm students from Tunisia with a passion for tech and a greener future. Frustrated by air pollution, they built CoRide to make carpooling easier. Farah's clever algorithms match users perfectly, while Asma's design keeps things user-friendly. "
-        android:textAlignment="center"
-        android:textColor="@color/green3"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView18"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        android:layout_marginBottom="18dp"
-        android:text="CoRide: Created by Data Science Students! "
-        android:textColor="@color/green3"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView16"
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="235dp"
+        android:layout_height="263dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.592"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/farah" />
+        app:layout_constraintTop_toBottomOf="@+id/about">
 
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="397dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
-        android:text="Join the movement - download CoRide today!"
-        android:textAlignment="center"
-        android:textColor="@color/green3"
-        android:textSize="20sp"
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="119dp"
+            android:layout_height="246dp"
+            app:srcCompat="@drawable/asma1"
+            tools:layout_editor_absoluteX="82dp"
+            tools:layout_editor_absoluteY="101dp" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="124dp"
+            android:layout_height="247dp"
+            app:srcCompat="@drawable/farah2"
+            tools:layout_editor_absoluteX="218dp"
+            tools:layout_editor_absoluteY="101dp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="340dp"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+
+        <TextView
+            android:id="@+id/farah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/montserrat_bold"
+            android:text="AsmaBenHamouda"
+            android:textColor="@color/green3" />
+
+        <TextView
+            android:id="@+id/asma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+
+            android:fontFamily="@font/montserrat_bold"
+            android:text="FarahMathlouthi"
+            android:textColor="@color/green3" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="382dp"
+        android:layout_height="305dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="125dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginBottom="18dp"
+            android:paddingBottom="2dp"
+            android:text="CoRide: Created by Data Science Students! "
+            android:textAlignment="center"
+            android:textColor="@color/green3"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:text=" Meet Asma (20) and Farah (20), Isamm students from Tunisia with a passion for tech and a greener future. Frustrated by air pollution, they built CoRide to make carpooling easier. Farah's clever algorithms match users perfectly, while Asma's design keeps things user-friendly. "
+            android:textAlignment="center"
+            android:textColor="@color/green3"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="-1dp"
+            tools:layout_editor_absoluteY="518dp" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="Join the movement - download CoRide today!"
+            android:textAlignment="center"
+            android:textColor="@color/green3"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

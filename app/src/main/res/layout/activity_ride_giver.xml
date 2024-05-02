@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="right"
     android:background="@color/gr"
-    tools:context=".rideTaker">
+    tools:context=".rideGiver">
 
 
     <TextView

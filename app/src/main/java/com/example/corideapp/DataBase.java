@@ -102,11 +102,11 @@ public class DataBase extends SQLiteOpenHelper {
         }
     }
     public static Cursor getdataUserInfo(SQLiteDatabase db) {
-        Cursor cursorUserInfo = db.rawQuery("SELECT * FROM TABLE_USER_INFO", null);
+        Cursor cursorUserInfo = db.rawQuery("SELECT * FROM user_info", null);
         return cursorUserInfo;
     }
     public static Cursor getdataUsers(SQLiteDatabase db){
-        Cursor cursorUsers = db.rawQuery("SELECT * FROM TABLE_USER", null);
+        Cursor cursorUsers = db.rawQuery("SELECT * FROM users", null);
         return cursorUsers;
 
     }

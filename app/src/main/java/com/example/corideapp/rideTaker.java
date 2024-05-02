@@ -212,6 +212,7 @@ public class rideTaker extends AppCompatActivity {
 
         // Get the current user ID
         String userId = mAuth.getCurrentUser().getUid();
+
         // Reference to the "users" table to retrieve user information
         DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("users").child(userId);
         usersRef.addListenerForSingleValueEvent(new ValueEventListener() {

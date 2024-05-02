@@ -51,7 +51,6 @@ public class rideGiver extends AppCompatActivity {
     EditText depart1, arrive1, place;
     Button continueD,viewtrip1;
     Drawable logoDrawable;
-    String userid;
     int selectedYear1, selectedMonth1, selectedDayOfMonth1;
     int year1, month1, dayOfMonth1;
     private FirebaseAuth mAuth;
@@ -71,17 +70,8 @@ public class rideGiver extends AppCompatActivity {
 
         editime1 = findViewById(R.id.editime1); // Initialize editime TextView
         editdate1 = findViewById(R.id.editdate1); // Initialize editdate TextView
-        editPlace = findViewById(R.id.editplace);
+        place = findViewById(R.id.editplace);
         viewtrip1 = findViewById(R.id.continueD1);
-        place = findViewById(R.id.main);
-
-        // Get input from EditText fields
-        String departure1 = depart1.getText().toString();
-        String arrival1 = arrive1.getText().toString();
-        String date1 = editdate1.getText().toString();
-        String time1 = editime1.getText().toString();
-        String places = place.getText().toString();
-        int number1 = Integer.parseInt(place.getText().toString());
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -115,18 +105,22 @@ public class rideGiver extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                // Get input from EditText fields
+                String departure1 = depart1.getText().toString();
+                String arrival1 = arrive1.getText().toString();
+                String date1 = editdate1.getText().toString();
+                String time1 = editime1.getText().toString();
+                String places = place.getText().toString();
 
                 // Save ride request to Firebase
                 saveRideRequestToFirebase(departure1, arrival1, date1, time1, places);
+
                 Intent intent = new Intent(rideGiver.this, Home.class);
                 startActivity(intent);
                 finish();
 
             }
         });
-
-        editime1 = findViewById(R.id.editime1);
-        editdate1 = findViewById(R.id.editdate1);
 
         // Initialize logo drawable
         logoDrawable = ContextCompat.getDrawable(this, R.drawable.logo);
@@ -204,9 +198,7 @@ public class rideGiver extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
-
-        // Apply system bars insets
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main1), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
@@ -219,55 +211,74 @@ public class rideGiver extends AppCompatActivity {
             return;
         }
 
-        DatabaseReference rideRequestsRef = FirebaseDatabase.getInstance().getReference().child("give_ride_requests");
-
-        // Get the current user's unique identifier (e.g., user ID)
         String userId = mAuth.getCurrentUser().getUid();
-        // Create a HashMap to store ride request details
-        HashMap<String, Object> rideRequestMap = new HashMap<>();
-        rideRequestMap.put("departure", departure);
-        rideRequestMap.put("arrival", arrival);
-        rideRequestMap.put("date", date);
-        rideRequestMap.put("time", time);
-        rideRequestMap.put("UserId", userid);
 
-        // Push the ride request to Firebase
-        rideRequestsRef.push().setValue(rideRequestMap)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        // Ride request saved successfully
-                        Toast.makeText(rideGiver.this, "Give-Ride request created successfully", Toast.LENGTH_SHORT).show();
-                        // Optionally, you can navigate to another activity or perform additional actions here
-                        readDataFromOtherTable();
+        DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("users").child(userId);
 
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        // Failed to save ride request
-                        Toast.makeText(rideGiver.this, "Failed to create Give-ride request", Toast.LENGTH_SHORT).show();
-                    }
-                });
+        usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                // Retrieve user information
+                String userName = snapshot.child("name").getValue(String.class);
+                String userPhone = snapshot.child("phone").getValue(String.class);
 
+                // Create a HashMap to store ride request details
+                HashMap<String, Object> rideRequestMap = new HashMap<>();
+                rideRequestMap.put("departure", departure);
+                rideRequestMap.put("arrival", arrival);
+                rideRequestMap.put("date", date);
+                rideRequestMap.put("time", time);
+                rideRequestMap.put("places", place);
+                rideRequestMap.put("userName", userName); // Add user name to the ride request
+                rideRequestMap.put("userPhone", userPhone); // Add user phone to the ride request
 
+                // Push the ride request to Firebase
+                DatabaseReference rideRequestsRef = FirebaseDatabase.getInstance().getReference().child("give_ride_requests");
+                rideRequestsRef.push().setValue(rideRequestMap)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                // Ride request saved successfully
+                                Toast.makeText(rideGiver.this, "Ride request created successfully", Toast.LENGTH_SHORT).show();
+                                // Optionally, you can navigate to another activity or perform additional actions here
+                                readDataFromOtherTable();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                // Failed to save ride request
+                                Toast.makeText(rideGiver.this, "Failed to create ride request", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+                Log.e(TAG, "Database error: " + error.getMessage());
+                Toast.makeText(rideGiver.this, "Database error", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
     private void readDataFromOtherTable() {
-
         DatabaseReference otherTableRef = FirebaseDatabase.getInstance().getReference().child("users");
-        otherTableRef.addValueEventListener(new ValueEventListener() {
+        otherTableRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    String key = snapshot.getKey(); // Retrieve the key of the data
-                    String name = snapshot.getValue(String.class); // Deserialize data into your custom class
-                    String phone = snapshot.getValue(String.class);
-                    // Now you can use 'data' object to access the retrieved data
+                    String userId = snapshot.getKey(); // Retrieve the user ID
+                    String name = snapshot.child("name").getValue(String.class); // Retrieve the name from the user data
+                    String phone = snapshot.child("phone").getValue(String.class); // Retrieve the phone number from the user data
+
+                    // Now you can use 'name' and 'phone' to access the retrieved data
+                    // For example, you can use them to update the ride request data
+                    // or perform any other operations as needed.
+                    Log.d(TAG, "Name: " + name + ", Phone: " + phone);
                 }
             }
 

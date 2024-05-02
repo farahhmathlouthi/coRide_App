@@ -17,6 +17,9 @@
       <entry key="rideTaker">
         <State />
       </entry>
+      <entry key="signUpActivity">
+        <State />
+      </entry>
     </value>
   </component>
 </project>

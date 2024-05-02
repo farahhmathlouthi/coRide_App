@@ -1,5 +1,7 @@
 package com.example.corideapp;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.ActivityNotFoundException;
@@ -9,6 +11,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -28,8 +31,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -233,6 +239,8 @@ public class rideGiver extends AppCompatActivity {
                         // Ride request saved successfully
                         Toast.makeText(rideGiver.this, "Give-Ride request created successfully", Toast.LENGTH_SHORT).show();
                         // Optionally, you can navigate to another activity or perform additional actions here
+                        readDataFromOtherTable();
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -245,6 +253,30 @@ public class rideGiver extends AppCompatActivity {
 
 
 
+    }
+
+    private void readDataFromOtherTable() {
+
+        DatabaseReference otherTableRef = FirebaseDatabase.getInstance().getReference().child("users");
+        otherTableRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    String key = snapshot.getKey(); // Retrieve the key of the data
+                    String name = snapshot.getValue(String.class); // Deserialize data into your custom class
+                    String phone = snapshot.getValue(String.class);
+                    // Now you can use 'data' object to access the retrieved data
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", databaseError.toException());
+            }
+        });
     }
 
     private void drawTrack(String source, String destination) {

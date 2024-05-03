@@ -36,7 +36,7 @@ public class signUpActivity extends AppCompatActivity {
     private ProgressBar SP;
     String email,name , password, password2;
     CheckBox checkBox1;
-    private DataBase databasehelper;
+    private Database2 databasehelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +53,7 @@ public class signUpActivity extends AppCompatActivity {
         editTextPassword2 = findViewById(R.id.inputP3);
         SP = findViewById(R.id.progressBarSignUp);
         checkBox1 = findViewById(R.id.terms);
-        databasehelper = new DataBase(this);
+        databasehelper = new Database2(this);
         editTextName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -63,6 +63,10 @@ public class signUpActivity extends AppCompatActivity {
                     if (TextUtils.isEmpty(name)) {
                         // If the EditText is empty, display a Toast
                         Toast.makeText(signUpActivity.this, "You Need To Enter Your Full Name", Toast.LENGTH_SHORT).show();
+                    }
+                    else if ( !isValidName(name)) {
+                        // If the EditText is empty, display a Toast
+                        Toast.makeText(signUpActivity.this, "Name can contain only letters and spaces", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -76,6 +80,10 @@ public class signUpActivity extends AppCompatActivity {
                     if (TextUtils.isEmpty(name)) {
                         // If the EditText is empty, display a Toast
                         Toast.makeText(signUpActivity.this, "You Need To Enter Your Email", Toast.LENGTH_SHORT).show();
+                    }else if (isValidEmail(name)) {
+                        // If the email is not valid, the isValidEmail function will display a toast message
+                        // No need to display another toast message here
+                        SP.setVisibility(View.GONE);
                     }
                 }
             }
@@ -110,6 +118,14 @@ public class signUpActivity extends AppCompatActivity {
         signUpB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (TextUtils.isEmpty(editTextName.getText().toString().trim()) &&
+                        TextUtils.isEmpty(editTextEmail.getText().toString().trim()) &&
+                        TextUtils.isEmpty(editTextPassword1.getText().toString().trim()) &&
+                        TextUtils.isEmpty(editTextPassword2.getText().toString().trim())) {
+                    // If all fields are empty, display a Toast
+                    Toast.makeText(signUpActivity.this, "All fields are empty. Please fill in the required information.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 SP.setVisibility(View.VISIBLE);
 
                 name = editTextName.getText().toString();
@@ -117,6 +133,14 @@ public class signUpActivity extends AppCompatActivity {
                 password = editTextPassword1.getText().toString().trim();
                 password2 = editTextPassword2.getText().toString().trim();
                 int paddingTop = 100;
+                if (!isValidName(name)) {
+                    Toast.makeText(signUpActivity.this, "Invalid name. Name can contain only letters and spaces.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (!isValidEmail(email)) {
+                    // isValidEmail() method already displays appropriate toast messages
+                    return;
+                }
 
                 if (TextUtils.isEmpty(name)) {
                     Toast toast = Toast.makeText(signUpActivity.this, "Enter Your Name", Toast.LENGTH_SHORT);
@@ -204,4 +228,39 @@ public class signUpActivity extends AppCompatActivity {
         }
 
     }
+    private boolean isValidName(String name) {
+        // Ensure that the name contains only letters and spaces
+        boolean containsOnlyLettersAndSpaces = name.matches("[a-zA-Z ]+");
+
+        // Return true if the name is valid, false otherwise
+        return containsOnlyLettersAndSpaces;
+    }
+    private boolean isValidEmail(String email) {
+        // Check if email contains @ symbol
+        if (!email.contains("@")) {
+            // Display a toast indicating that the email is invalid
+            Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        // Check if email ends with a valid domain (.com or .fr)
+        if (!(email.endsWith(".com") || email.endsWith(".fr"))) {
+            // Display a toast indicating that the email domain is invalid
+            Toast.makeText(this, "Email domain must be .com or .fr", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        // Check if email contains a valid service provider (@gmail, @hotmail, @yahoo)
+        if (!(email.contains("@gmail") || email.contains("@hotmail") || email.contains("@yahoo"))) {
+            // Display a toast indicating that the email service provider is invalid
+            Toast.makeText(this, "Email service provider must be Gmail, Hotmail, or Yahoo", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        // Email is valid if it passes all the checks
+        return true;
+    }
+
+
+
 };

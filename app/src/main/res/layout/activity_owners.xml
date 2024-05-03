@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:background="@color/light_blue"
     tools:context=".Owners">
 
@@ -14,40 +14,38 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="80dp"
-        android:layout_marginBottom="13dp"
         android:fontFamily="@font/montserrat_light"
         android:text="Owners"
         android:textColor="@color/blue2"
         android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView12"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginEnd="14dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="20dp"
         android:text="CoRide: Created by Data Science Students! "
-        android:textColor="@color/green3"
-        android:textSize="20sp"
+        android:textColor="@color/blue2"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about" />
+        app:layout_constraintTop_toBottomOf="@+id/about"
+        app:layout_constraintVertical_bias="0.483" />
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="384dp"
-        android:layout_height="149dp"
-        android:layout_marginStart="13dp"
+        android:layout_width="338dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="14dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="15dp"
         android:text=" Meet Asma (20) and Farah (20), Isamm students from Tunisia with a passion for tech and a greener future. Frustrated by air pollution, they built CoRide to make carpooling easier. Farah's clever algorithms match users perfectly, while Asma's design keeps things user-friendly. "
         android:textAlignment="center"
@@ -55,37 +53,42 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/textView18"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17"
-        app:layout_constraintVertical_bias="0.531" />
+        app:layout_constraintVertical_bias="0.416" />
 
     <TextView
         android:id="@+id/textView18"
-        android:layout_width="392dp"
-        android:layout_height="55dp"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:layout_marginStart="13dp"
-        android:layout_marginEnd="6dp"
-        android:layout_marginBottom="143dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="100dp"
+        android:fontFamily="@font/montserrat_light"
         android:text="Join the movement - download CoRide today!"
         android:textAlignment="center"
         android:textColor="@color/green3"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <LinearLayout
+        android:id="@+id/linearLayout5"
         android:layout_width="291dp"
         android:layout_height="281dp"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="61dp"
-        tools:layout_editor_absoluteY="117dp"
+        android:layout_marginStart="61dp"
 
-        >
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/farah"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about">
 
 
         <ImageView
@@ -109,23 +112,29 @@
         android:id="@+id/farah"
         android:layout_width="0dp"
         android:layout_height="27dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="61dp"
         android:layout_weight="1"
         android:fontFamily="@font/montserrat_bold"
         android:text="AsmaBenHamouda"
         android:textColor="@color/green3"
-        tools:layout_editor_absoluteX="213dp"
-        tools:layout_editor_absoluteY="410dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/asma"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 
     <TextView
         android:id="@+id/asma"
         android:layout_width="0dp"
         android:layout_height="28dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="12dp"
         android:layout_weight="1"
         android:fontFamily="@font/montserrat_bold"
         android:text="FarahMathlouthi"
         android:textAlignment="center"
         android:textColor="@color/green3"
-        tools:layout_editor_absoluteX="61dp"
-        tools:layout_editor_absoluteY="410dp" />
+        app:layout_constraintEnd_toStartOf="@+id/farah"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -42,8 +42,8 @@ public class CustomAdapter2 extends ArrayAdapter<RideRequest2> {
         TextView tvPlaces = convertView.findViewById(R.id.placeTextView3);
 
 
-        tvName.setText(rideRequest1.getName());
-        tvPhone.setText(rideRequest1.getPhone());
+        tvName.setText(rideRequest1.getUserName());
+        tvPhone.setText(rideRequest1.getUserPhone());
         tvArrival.setText(rideRequest1.getArrival());
         tvDeparture.setText(rideRequest1.getDeparture());
         tvDate.setText(rideRequest1.getDate());

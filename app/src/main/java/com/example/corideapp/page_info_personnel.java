@@ -13,14 +13,13 @@ import android.widget.Toast;
 public class page_info_personnel extends AppCompatActivity {
     EditText full, email, user, adresse, phone, gender;
     Button view;
-    private DataBase databasehelper;
+    private Database2 databasehelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page_info_personnel);
-        databasehelper = new DataBase(this);
-
+        databasehelper = new Database2(this);
         full = findViewById(R.id.e1);
         email = findViewById(R.id.e2);
         user = findViewById(R.id.e3);

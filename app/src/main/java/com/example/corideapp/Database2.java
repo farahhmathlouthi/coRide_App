@@ -9,10 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class DataBase extends SQLiteOpenHelper {
+public class Database2 extends SQLiteOpenHelper {
     private static final String DATABASE_NAME="INFO_PERSONNEL";
     private static final String TABLE_USERS = "users";
     private static final String TABLE_USER_INFO = "user_info";
@@ -43,7 +40,7 @@ public class DataBase extends SQLiteOpenHelper {
 
 
 
-    public DataBase( @Nullable Context context) {
+    public Database2(@Nullable Context context) {
         super( context,DATABASE_NAME,null,1);
     }
 
@@ -103,11 +100,11 @@ public class DataBase extends SQLiteOpenHelper {
         }
     }
     public static Cursor getdataUserInfo(@NonNull SQLiteDatabase db) {
-        Cursor cursorUserInfo = db.rawQuery("SELECT * FROM user_info ORDER BY id DESC  ", null);
+        Cursor cursorUserInfo = db.rawQuery("SELECT * FROM user_info ORDER BY _id DESC LIMIT 1 ", null);
         return cursorUserInfo;
     }
     public static Cursor getdataUsers(SQLiteDatabase db){
-        Cursor cursorUsers = db.rawQuery("SELECT * FROM users ORDER BY id DESC ", null);
+        Cursor cursorUsers = db.rawQuery("SELECT * FROM users ORDER BY _id DESC LIMIT 1", null);
         return cursorUsers;
 
     }

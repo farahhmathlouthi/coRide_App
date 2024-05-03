@@ -21,7 +21,6 @@ import java.util.List;
             this.context = context;
             this.rideRequestList = rideRequestList;
         }
-
         @NonNull
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -33,19 +32,18 @@ import java.util.List;
 
             TextView tvArrival = convertView.findViewById(R.id.arrivalTextView1);
             TextView tvDeparture = convertView.findViewById(R.id.departureTextView1);
-            TextView tvTime = convertView.findViewById(R.id.timeTextView1);
             TextView tvDate = convertView.findViewById(R.id.dateTextView1);
+            TextView tvTime = convertView.findViewById(R.id.timeTextView1);
             TextView tvName = convertView.findViewById(R.id.nameTextView1);
             TextView tvPhone = convertView.findViewById(R.id.phoneTextView1);
 
             tvArrival.setText(rideRequest.getArrival());
             tvDeparture.setText(rideRequest.getDeparture());
-            tvTime.setText(rideRequest.getTime());
             tvDate.setText(rideRequest.getDate());
-            tvName.setText(rideRequest.getName());
-            tvPhone.setText(rideRequest.getPhone());
+            tvTime.setText(rideRequest.getTime());
+            tvName.setText(rideRequest.getUserName());
+            tvPhone.setText(rideRequest.getUserPhone());
 
             return convertView;
         }
-
 }

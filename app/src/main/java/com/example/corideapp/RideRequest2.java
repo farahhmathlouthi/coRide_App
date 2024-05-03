@@ -15,65 +15,65 @@ public class RideRequest2 {
 
     // Constructor with all fields
     public RideRequest2(String arrival2, String departure2, String date2, String time2, String fullName2, String phone2, String places) {
+        this.fullName2 = fullName2;
+        this.phone2 = phone2;
         this.arrival2 = arrival2;
         this.departure2 = departure2;
         this.date2 = date2;
         this.time2 = time2;
-        this.fullName2 = fullName2;
-        this.phone2 = phone2;
         this.places = places;
     }
 
     // Getters and setters (required for Firebase)
-    public String getArrival2() {
+    public String getArrival() {
         return arrival2;
     }
 
-    public void setArrival2(String arrival2) {
+    public void setArrival(String arrival2) {
         this.arrival2 = arrival2;
     }
 
-    public String getDeparture2() {
+    public String getDeparture() {
         return departure2;
     }
 
-    public void setDeparture2(String departure2) {
+    public void setDeparture(String departure2) {
         this.departure2 = departure2;
     }
-    public String getDate2() {
+    public String getDate() {
         return date2;
     }
 
-    public void setDate2(String date2) {
+    public void setDate(String date2) {
         this.date2 = date2;
     }
-    public String getTime2() {
+    public String getTime() {
         return time2;
     }
 
-    public void setTime2(String time2) {
+    public void setTime(String time2) {
         this.time2 = time2;
     }
-    public String getName2() {
+    public String getName() {
         return fullName2;
     }
 
-    public void setName2(String fullName2) {
+    public void setName(String fullName2) {
         this.fullName2 = fullName2;
     }
-    public String getPhone2() {
+    public String getPhone() {
         return phone2;
     }
 
-    public void setPhone2(String phone2) {
+    public void setPhone(String phone2) {
         this.phone2 = phone2;
     }
 
-    public String getPlaces2 () {
+    public String getPlaces () {
         return places;
     }
 
-    public void setPlace2 (String places) {
+    public void setPlace (String places) {
         this.places = places;
     }
 

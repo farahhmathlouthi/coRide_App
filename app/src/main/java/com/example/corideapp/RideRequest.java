@@ -5,21 +5,21 @@ public class RideRequest {
     private String departure;
     private String date;
     private String time;
-    private String fullName;
-    private String phone;
+    private String userName;
+    private String userPhone;
 
     // Default constructor (required by Firebase)
     public RideRequest() {
     }
 
     // Constructor with all fields
-    public RideRequest(String arrival, String departure, String date, String time, String fullName, String phone) {
+    public RideRequest(String arrival, String departure, String date, String time, String userName, String userPhone) {
         this.arrival = arrival;
         this.departure = departure;
         this.date = date;
         this.time = time;
-        this.fullName = fullName;
-        this.phone = phone;
+        this.userName = userName;
+        this.userPhone = userPhone;
     }
 
     // Getters and setters (required for Firebase)
@@ -52,21 +52,19 @@ public class RideRequest {
     public void setTime(String time) {
         this.time = time;
     }
-    public String getName() {
-        return fullName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String fullName) {
-        this.fullName = fullName;
+    public void setUserName(String name) {
+        this.userName = name; // Assign the parameter to the userName field
     }
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public String getUserPhone() {
+        return userPhone;
     }
 
-    // Repeat for other fields...
+    public void setUserPhone(String phone) {
+        this.userPhone = phone; // Assign the parameter to the userPhone field
+    }
 }
 

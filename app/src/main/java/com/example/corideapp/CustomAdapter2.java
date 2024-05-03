@@ -16,12 +16,12 @@ import java.util.List;
 
 public class CustomAdapter2 extends ArrayAdapter<RideRequest2> {
     private Context context;
-    private List<RideRequest2> rideRequestList;
+    private List<RideRequest2> rideRequestList1;
 
-    public CustomAdapter2(Context context, List<RideRequest2> rideRequestList) {
-        super(context, R.layout.ride_card, rideRequestList);
+    public CustomAdapter2(Context context, List<RideRequest2> rideRequestList1) {
+        super(context, R.layout.ride_card, rideRequestList1);
         this.context = context;
-        this.rideRequestList = rideRequestList;
+        this.rideRequestList1 = rideRequestList1;
     }
 
     @NonNull
@@ -31,23 +31,24 @@ public class CustomAdapter2 extends ArrayAdapter<RideRequest2> {
             convertView = LayoutInflater.from(context).inflate(R.layout.ride_card, parent, false);
         }
 
-        RideRequest2 rideRequest1 = rideRequestList.get(position);
+        RideRequest2 rideRequest1 = rideRequestList1.get(position);
 
+        TextView tvName = convertView.findViewById(R.id.NameTextView3);
+        TextView tvPhone = convertView.findViewById(R.id.PhoneTextView3);
         TextView tvArrival = convertView.findViewById(R.id.arrivalTextView3);
         TextView tvDeparture = convertView.findViewById(R.id.departureTextView3);
         TextView tvTime = convertView.findViewById(R.id.timeTextView3);
         TextView tvDate = convertView.findViewById(R.id.dateTextView3);
-        TextView tvName = convertView.findViewById(R.id.NameTextView3);
-        TextView tvPhone = convertView.findViewById(R.id.PhoneTextView3);
         TextView tvPlaces = convertView.findViewById(R.id.placeTextView3);
 
-        tvArrival.setText(rideRequest1.getArrival2());
-        tvDeparture.setText(rideRequest1.getDeparture2());
-        tvTime.setText(rideRequest1.getTime2());
-        tvDate.setText(rideRequest1.getDate2());
-        tvName.setText(rideRequest1.getName2());
-        tvPhone.setText(rideRequest1.getPhone2());
-        tvPlaces.setText(rideRequest1.getPlaces2());
+
+        tvName.setText(rideRequest1.getName());
+        tvPhone.setText(rideRequest1.getPhone());
+        tvArrival.setText(rideRequest1.getArrival());
+        tvDeparture.setText(rideRequest1.getDeparture());
+        tvDate.setText(rideRequest1.getDate());
+        tvTime.setText(rideRequest1.getTime());
+        tvPlaces.setText(rideRequest1.getPlaces());
 
         return convertView;
     }

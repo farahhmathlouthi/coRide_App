@@ -23,7 +23,7 @@
 
 
                 <TextView
-                    android:id="@+id/NameTextView"
+                    android:id="@+id/NameTextView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="FullName: "
@@ -31,7 +31,7 @@
                     android:fontFamily="@font/montserrat_bold"/>
 
                 <TextView
-                    android:id="@+id/PhoneTextView"
+                    android:id="@+id/PhoneTextView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Phone: "
@@ -39,7 +39,7 @@
                     android:fontFamily="@font/montserrat_bold"/>
 
                 <TextView
-                    android:id="@+id/arrivalTextView"
+                    android:id="@+id/arrivalTextView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Arrival: "
@@ -47,7 +47,7 @@
                     android:fontFamily="@font/montserrat_bold" />
 
                 <TextView
-                    android:id="@+id/departureTextView"
+                    android:id="@+id/departureTextView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Departure: "
@@ -56,7 +56,7 @@
 
 
                 <TextView
-                    android:id="@+id/DateTextView"
+                    android:id="@+id/dateTextView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Date: "
@@ -64,7 +64,7 @@
                     android:fontFamily="@font/montserrat_bold"/>
 
                 <TextView
-                    android:id="@+id/timeTextView"
+                    android:id="@+id/timeTextView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Time: "
@@ -88,7 +88,7 @@
                 android:paddingLeft="10dp">
 
                 <TextView
-                    android:id="@+id/NameTextView1"
+                    android:id="@+id/NameTextView3"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text=" "
@@ -96,7 +96,7 @@
                     android:fontFamily="@font/montserrat_bold"/>
 
                 <TextView
-                    android:id="@+id/PhoneTextView1"
+                    android:id="@+id/PhoneTextView3"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text=" "
@@ -105,7 +105,7 @@
 
 
                 <TextView
-                    android:id="@+id/arrivalTextView1"
+                    android:id="@+id/arrivalTextView3"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text=" "
@@ -113,7 +113,7 @@
                     android:fontFamily="@font/montserrat_bold" />
 
                 <TextView
-                    android:id="@+id/departureTextView1"
+                    android:id="@+id/departureTextView3"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text=" "
@@ -122,7 +122,7 @@
 
 
                 <TextView
-                    android:id="@+id/DateTextView1"
+                    android:id="@+id/dateTextView3"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text=" "
@@ -130,22 +130,20 @@
                     android:fontFamily="@font/montserrat_bold"/>
 
                 <TextView
-                    android:id="@+id/timeTextView1"
+                    android:id="@+id/timeTextView3"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text=""
                     android:textSize="20dp"
                     android:fontFamily="@font/montserrat_bold"/>
 
-
                 <TextView
-                    android:id="@+id/placeTextView1"
+                    android:id="@+id/placeTextView3"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text=" "
                     android:textSize="20dp"
                     android:fontFamily="@font/montserrat_bold"/>
-
 
             </LinearLayout>
 

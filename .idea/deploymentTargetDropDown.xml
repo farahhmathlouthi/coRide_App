@@ -2,13 +2,29 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="Home">
+        <State>
+          <multipleDevicesSelectedInDropDown value="true" />
+          <runningDeviceTargetsSelectedWithDialog>
+            <Target>
+              <type value="RUNNING_DEVICE_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="SERIAL_NUMBER" />
+                  <value value="b12029167d72" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </runningDeviceTargetsSelectedWithDialog>
+        </State>
+      </entry>
       <entry key="MainActivity">
         <State />
       </entry>
-      <entry key="Owners">
+      <entry key="app">
         <State />
       </entry>
-      <entry key="app">
+      <entry key="rideRequests">
         <State />
       </entry>
     </value>

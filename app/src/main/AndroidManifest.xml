@@ -34,7 +34,7 @@
             android:exported="true" />
         <activity
             android:name=".requests"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".loading1"
             android:exported="true" />

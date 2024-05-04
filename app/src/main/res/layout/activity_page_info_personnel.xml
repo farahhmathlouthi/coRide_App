@@ -26,52 +26,49 @@
 
     <LinearLayout
         android:id="@+id/linearLayout5"
-        android:layout_width="220dp"
-        android:layout_height="178dp"
-        android:layout_marginEnd="11dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toStartOf="@+id/imageView8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.292">
+
+        <TextView
+            android:id="@+id/per"
+            android:layout_width="202dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="   Personnal"
+            android:textAlignment="textEnd"
+            android:textColor="#305E96"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/inf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="44dp"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Information "
-            android:textColor="#305E96"
-            android:textSize="30sp" />
-
-        <TextView
-            android:id="@+id/per"
-            android:layout_width="202dp"
-            android:layout_height="51dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Personnel"
-            android:textAlignment="textEnd"
+            android:text="Informations "
             android:textColor="#305E96"
             android:textSize="30sp" />
 
     </LinearLayout>
 
-
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="296dp"
-        android:layout_height="558dp"
+        android:layout_width="280dp"
+        android:layout_height="391dp"
         android:layout_margin="10dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="26dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/continueD"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView8">
 
@@ -81,15 +78,17 @@
             android:id="@+id/full"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="FullName"
+            android:fontFamily="@font/montserrat_light"
+            android:text="FullName:"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textColor="#305E96"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/e1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
             android:backgroundTint="#000000"
             android:drawablePadding="8dp"
             android:inputType="text|textPostalAddress|textMultiLine"
@@ -101,15 +100,17 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_light"
             android:text="Email"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textColor="#305E96"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/e2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
             android:backgroundTint="#000000"
             android:drawablePadding="8dp"
             android:inputType="text|textPostalAddress|textMultiLine"
@@ -121,15 +122,17 @@
             android:id="@+id/user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_light"
             android:text="Username"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textColor="#305E96"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/e3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
             android:backgroundTint="#000000"
             android:drawablePadding="8dp"
             android:inputType="text|textPostalAddress|textMultiLine"
@@ -141,15 +144,17 @@
             android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_light"
             android:text="Address"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textColor="#305E96"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/e4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
             android:backgroundTint="#000000"
             android:drawablePadding="8dp"
             android:inputType="text|textPostalAddress|textMultiLine"
@@ -162,15 +167,17 @@
             android:id="@+id/phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_light"
             android:text="Phone Number"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textColor="#305E96"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/e5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
             android:backgroundTint="#000000"
             android:drawablePadding="8dp"
             android:inputType="text|textPostalAddress|textMultiLine"
@@ -210,6 +217,7 @@
         android:id="@+id/continueD"
         android:layout_width="261dp"
         android:layout_height="46dp"
+        android:layout_marginBottom="107dp"
         android:backgroundTint="#305E96"
         android:paddingHorizontal="60dp"
         android:text="View Information"

@@ -47,12 +47,12 @@
 
                 <ImageView
                     android:id="@+id/imageView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="270dp"
+                    android:layout_width="403dp"
+                    android:layout_height="317dp"
                     android:layout_marginTop="48dp"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/drivepr_car_sharing"
-                    tools:layout_editor_absoluteX="16dp" />
+                    tools:layout_editor_absoluteX="4dp" />
 
                 <ImageView
                     android:id="@+id/imageView4"
@@ -75,7 +75,7 @@
                 <Button
                     android:id="@+id/choice1"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:backgroundTint="@color/gr"
                     android:fontFamily="@font/montserrat_light"
@@ -88,7 +88,7 @@
                 <Button
                     android:id="@+id/choice2"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:backgroundTint="@color/gr"
                     android:fontFamily="@font/montserrat_light"
@@ -99,22 +99,9 @@
                     android:textSize="24sp" />
 
                 <Button
-                    android:id="@+id/choice3"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:backgroundTint="@color/gr"
-                    android:fontFamily="@font/montserrat_light"
-                    android:gravity="center"
-                    android:text="Requests"
-                    android:textAlignment="center"
-                    android:textColor="@color/green3"
-                    android:textSize="24sp" />
-
-                <Button
                     android:id="@+id/choice4"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:backgroundTint="@color/gr"
                     android:fontFamily="@font/montserrat_light"
@@ -127,7 +114,7 @@
                 <Button
                     android:id="@+id/logout"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:backgroundTint="@color/gr"
                     android:fontFamily="@font/montserrat_light"

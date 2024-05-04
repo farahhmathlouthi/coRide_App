@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue2"
+    android:background="@drawable/olympic_national_park_top_view"
     tools:context=".Planning">
 
 
@@ -23,7 +23,7 @@
             android:layout_marginBottom="60dp"
             android:fontFamily="@font/montserrat_bold"
             android:text=" coRide"
-            android:textColor="@color/green3"
+            android:textColor="@color/white"
             android:textSize="48sp" />
 
 
@@ -33,7 +33,7 @@
             android:layout_height="200dp"
             android:layout_marginStart="103dp"
             android:layout_marginBottom="30dp"
-            android:backgroundTint="@color/green3"
+            android:backgroundTint="#00272C"
             android:fontFamily="@font/montserrat_bold"
             android:text="Ride Takers Request"
             android:textSize="24sp">
@@ -46,7 +46,7 @@
             android:layout_height="200dp"
             android:layout_marginStart="103dp"
             android:layout_marginBottom="20dp"
-            android:backgroundTint="@color/green3"
+            android:backgroundTint="#00272C"
             android:fontFamily="@font/montserrat_bold"
             android:text="Ride Givers Request"
             android:textSize="24sp">

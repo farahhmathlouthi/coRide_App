@@ -4,66 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".requests">
+    android:background="@color/car2"
+    tools:context=".Favoris">
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send Us A Message"
-        android:textColor="@color/green3"
+        android:layout_marginTop="24dp"
+        android:text="Send Us A Message!"
+        android:textColor="@color/greenoba"
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintVertical_bias="0.037" />
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="341dp"
         android:layout_height="186dp"
-        android:text="Feel free to explore and engage with our Swap It app at your convenience, wherever you may be. Whether you have questions, suggestions, or simply want to share your experiences, we're here to listen. Your feedback is invaluable to us in continually improving our app to better serve your needs. So don't hesitate to reach out whenever and wherever inspiration strikes!"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Explore coRide, our car sharing app, anytime, anywhere. We value your input in making coRide better for you. Share your thoughts, ideas, and experiences with us. Your feedback drives our continuous improvement. Reach out whenever inspiration strikes!"
         android:textAlignment="center"
-        android:textColor="#111111"
+        android:textColor="@color/green3"
         android:textSize="17dp"
-        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.739" />
+        app:layout_constraintVertical_bias="0.615" />
 
     <EditText
         android:id="@+id/editTextText"
-        android:layout_width="257dp"
-        android:layout_height="56dp"
+        android:layout_width="259dp"
+        android:layout_height="109dp"
+        android:background="@drawable/input_bg"
+        android:backgroundTint="@color/gr"
         android:ems="10"
-        android:inputType="text"
+        android:gravity="center"
+        android:hint="Write your message here"
+        android:inputType="textMultiLine"
         android:minHeight="48dp"
-        android:text="Write your message"
-        android:textColor="#756F6F"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/green3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintHorizontal_bias="0.23"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.883" />
+        app:layout_constraintVertical_bias="0.82" />
 
     <ImageView
         android:id="@+id/imageView15"
-        android:layout_width="296dp"
-        android:layout_height="377dp"
+        android:layout_width="390dp"
+        android:layout_height="298dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225"
-        app:srcCompat="@drawable/btn_4" />
+        app:layout_constraintVertical_bias="0.169"
+        app:srcCompat="@drawable/jawakhther" />
 
     <Button
         android:id="@+id/button9"
@@ -77,5 +82,5 @@
         app:layout_constraintHorizontal_bias="0.881"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.883" />
+        app:layout_constraintVertical_bias="0.796" />
 </androidx.constraintlayout.widget.ConstraintLayout>

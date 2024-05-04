@@ -16,7 +16,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="69dp"
         android:layout_marginEnd="69dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="36dp"
         android:text="Your Location Is Confidential ! "
         android:textAlignment="center"
         android:textColor="@color/grey2"
@@ -26,12 +26,12 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
-        android:layout_width="412dp"
-        android:layout_height="786dp"
+        android:layout_width="411dp"
+        android:layout_height="747dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="1dp"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="1dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -79,7 +79,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="399dp"
+            android:layout_height="362dp"
             android:layout_margin="10dp"
             android:orientation="vertical">
 
@@ -96,7 +96,9 @@
                 android:id="@+id/depart1"
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
-                android:layout_margin="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
                 android:backgroundTint="@color/green3"
                 android:drawableLeft="@drawable/logo"
                 android:drawablePadding="8dp"
@@ -117,7 +119,9 @@
                 android:id="@+id/arrive1"
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
-                android:layout_margin="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
                 android:backgroundTint="@color/green3"
                 android:drawableLeft="@drawable/logo"
                 android:drawablePadding="8dp"
@@ -156,12 +160,12 @@
                 android:id="@+id/relativeL"
                 android:layout_width="367dp"
                 android:layout_height="50dp"
-                android:layout_margin="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-
                 tools:context="tabian.com.datepickerdialog.MainActivity">
-
 
                 <TextView
                     android:id="@+id/editdate1"
@@ -215,6 +219,7 @@
             </LinearLayout> -->
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

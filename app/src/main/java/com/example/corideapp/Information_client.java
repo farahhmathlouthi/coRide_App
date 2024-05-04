@@ -72,6 +72,7 @@ public class Information_client extends AppCompatActivity {
                         // If the EditText is empty, display a Toast
                         Toast.makeText(Information_client.this, "You Need To Enter A User Name", Toast.LENGTH_SHORT).show();
                     }
+
                 }
             }
         });
@@ -97,6 +98,11 @@ public class Information_client extends AppCompatActivity {
                     if (TextUtils.isEmpty(phone1)) {
                         // If the EditText is empty, display a Toast
                         Toast.makeText(Information_client.this, "You Need TO Enter A Phone Number", Toast.LENGTH_SHORT).show();
+                    }else if (!phone1.matches("\\d{8}")) {
+                        // If the input is not exactly 8 numbers, display a Toast
+                        Toast.makeText(Information_client.this, "The phone  must be 8 digits long", Toast.LENGTH_SHORT).show();
+                        // Clear the EditText field
+                        editU.setText("");
                     }
                 }
             }
@@ -118,30 +124,29 @@ public class Information_client extends AppCompatActivity {
                 // Validation du prénom
                 surname = editU.getText().toString().trim();
                 if (surname.isEmpty() || !surname.matches(".*[a-zA-Z].*")) {
-                    // Afficher le message de validation du prénom
-                    TextView surnameValidationMessage = findViewById(R.id.prenomcontrole);
-                    surnameValidationMessage.setVisibility(View.VISIBLE);
-                    surnameValidationMessage.setText(R.string.surname_validation_message);
+                    // Display toast message for invalid surname
+                    Toast.makeText(Information_client.this, R.string.surname_validation_message, Toast.LENGTH_SHORT).show();
                     isValid = false;
                     return;
                 }
 
-                if (address.isEmpty() ) {
-                    // Afficher le message de validation du nom
-                    TextView addressValidationMessage = findViewById(R.id.inputAdress);
-                    addressValidationMessage.setVisibility(View.VISIBLE);
-                    addressValidationMessage.setText(R.string.name_validation_message);
+                if (address.isEmpty()) {
+                    // Display toast message for empty address
+                    Toast.makeText(Information_client.this, R.string.name_validation_message, Toast.LENGTH_SHORT).show();
                     isValid = false;
-                    return; // Stop execution if validation fails
+                    return;
                 }
 
 
                 // Validation de l'e-mail
                 if (phone.isEmpty()) {
-                    // Afficher le message de validation de l'e-mail
-                    TextView userNameValidationMessage = findViewById(R.id.emailcontrole);
-                    userNameValidationMessage.setVisibility(View.VISIBLE);
-                    userNameValidationMessage.setText(R.string.email_validation_message);
+                    // Display toast message for empty phone number
+                    Toast.makeText(Information_client.this, R.string.email_validation_message, Toast.LENGTH_SHORT).show();
+                    isValid = false;
+                    return;
+                } else if (!TextUtils.isDigitsOnly(phone) || phone.length() != 8) {
+                    // Display toast message for invalid phone number
+                    Toast.makeText(Information_client.this, "Phone number must be 8 digits and contain only numbers", Toast.LENGTH_SHORT).show();
                     isValid = false;
                     return;
                 }
@@ -224,5 +229,12 @@ public class Information_client extends AppCompatActivity {
 
         }
 
+    }
+    private boolean isValidName(String name) {
+        // Ensure that the name contains only letters and spaces
+        boolean containsOnlyLettersAndSpaces = name.matches("[a-zA-Z ]+");
+
+        // Return true if the name is valid, false otherwise
+        return containsOnlyLettersAndSpaces;
     }
 }

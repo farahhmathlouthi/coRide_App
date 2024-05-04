@@ -27,7 +27,9 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="68dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="@font/montserrat_light"
         android:text="we will keep your information secure and it will not be shared anywhere "
         android:textAlignment="center"
@@ -43,7 +45,7 @@
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/input_bg"
         android:backgroundTint="@color/gr"
@@ -57,7 +59,7 @@
         android:paddingBottom="20dp"
         android:textColor="@color/green3"
         app:layout_constraintEnd_toEndOf="@+id/textView8"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -79,16 +81,16 @@
         android:textColor="@color/green3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/inputName"
-        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintHorizontal_bias="0.766"
         app:layout_constraintStart_toStartOf="@+id/inputName"
         app:layout_constraintTop_toBottomOf="@+id/inputName"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintVertical_bias="0.005" />
 
     <EditText
         android:id="@+id/inputPhone"
         android:layout_width="0dp"
         android:layout_height="80dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/input_bg"
         android:backgroundTint="@color/gr"
         android:drawableLeft="@drawable/email"
@@ -115,7 +117,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintHorizontal_bias="0.354"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputPhone"
         app:layout_constraintVertical_bias="0.0">
@@ -158,8 +160,8 @@
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="209dp"
-        android:layout_height="192dp"
+        android:layout_width="213dp"
+        android:layout_height="203dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.969"
         app:layout_constraintStart_toStartOf="parent"

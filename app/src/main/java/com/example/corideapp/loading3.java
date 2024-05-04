@@ -27,6 +27,6 @@ public class loading3 extends AppCompatActivity {
                 // Finish the loading1 activity to remove it from the back stack
                 finish();
             }
-        }, 2000); // 2000 milliseconds = 2 seconds (adjust as needed)
+        }, 4000); // 2000 milliseconds = 2 seconds (adjust as needed)
     }
 }

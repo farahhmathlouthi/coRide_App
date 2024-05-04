@@ -38,6 +38,8 @@ public class Favoris extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendMessageToDatabase();
+                Intent intent = new Intent(Favoris.this, requests.class);
+                startActivity(intent);
             }
         });
 

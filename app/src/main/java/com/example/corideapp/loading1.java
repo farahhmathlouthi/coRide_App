@@ -15,6 +15,7 @@ public class loading1 extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_loading1);
 
+
         // Delay the start of the Home activity by a certain duration (e.g., 2 seconds)
         View decorView = getWindow().getDecorView();
         decorView.postDelayed(new Runnable() {
@@ -27,7 +28,7 @@ public class loading1 extends AppCompatActivity {
                 // Finish the loading1 activity to remove it from the back stack
                 finish();
             }
-        }, 2000); // 2000 milliseconds = 2 seconds (adjust as needed)
+        }, 4000); // 2000 milliseconds = 2 seconds (adjust as needed)
     }
 }
 

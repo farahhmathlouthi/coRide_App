@@ -100,7 +100,6 @@ public class rideGiver extends AppCompatActivity {
             }
         });
 
-
         continueD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,6 +110,20 @@ public class rideGiver extends AppCompatActivity {
                 String date1 = editdate1.getText().toString();
                 String time1 = editime1.getText().toString();
                 String places = place.getText().toString();
+
+                // Validate inputs
+                if (departure1.isEmpty() || arrival1.isEmpty() || date1.isEmpty() || time1.isEmpty() || places.isEmpty()) {
+                    // Show a toast message indicating that all fields are required
+                    Toast.makeText(rideGiver.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
+                    return; // Exit onClick method
+                }
+
+                // Check if the place contains only numeric characters
+                if (!places.matches("[0-9]+")) {
+                    // Show a toast message indicating that the place should contain only numeric characters
+                    Toast.makeText(rideGiver.this, "Place should contain only numeric characters", Toast.LENGTH_SHORT).show();
+                    return; // Exit onClick method
+                }
 
                 // Save ride request to Firebase
                 saveRideRequestToFirebase(departure1, arrival1, date1, time1, places);

@@ -16,6 +16,7 @@ public class Profil extends AppCompatActivity {
     FirebaseAuth auth;
     Button log, owners, request, pi,aboutus;
     FirebaseAuth user;
+    ImageView backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,17 +28,18 @@ public class Profil extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         log = findViewById(R.id.logout);
         owners = findViewById(R.id.choice4);
-        request = findViewById(R.id.choice3);
         pi = findViewById(R.id.choice1);
         aboutus = findViewById(R.id.choice2);
         user = auth;
-        ImageView backButton = findViewById(R.id.back1);
+        backButton = findViewById(R.id.back1);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish(); // Navigate back to the previous activity
-            }
+
+                Intent intent = new Intent(Profil.this,Home.class);
+                startActivity(intent);
+                finish();            }
         });
 
         aboutus.setOnClickListener(new View.OnClickListener() {
@@ -47,14 +49,6 @@ public class Profil extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        request.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), requests.class);
-                startActivity(intent);
-            }
-        });
-
         owners.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,6 +82,8 @@ public class Profil extends AppCompatActivity {
 
             }
         });
+
+
 
     }
 

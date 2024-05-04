@@ -11,6 +11,12 @@
       <entry key="app">
         <State />
       </entry>
+      <entry key="loading1">
+        <State />
+      </entry>
+      <entry key="loading3">
+        <State />
+      </entry>
     </value>
   </component>
 </project>

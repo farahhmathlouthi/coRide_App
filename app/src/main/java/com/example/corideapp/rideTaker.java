@@ -111,6 +111,13 @@ public class rideTaker extends AppCompatActivity {
                 String date = editdate.getText().toString();
                 String time = editime.getText().toString();
 
+                // Validate inputs
+                if (departure.isEmpty() || arrival.isEmpty() || date.isEmpty() || time.isEmpty()) {
+                    // Show a toast message indicating that all fields are required
+                    Toast.makeText(rideTaker.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
+                    return; // Exit onClick method
+                }
+
                 // Save ride request to Firebase
                 saveRideRequestToFirebase(departure, arrival, date, time);
                 Intent intent = new Intent(rideTaker.this, Home.class);

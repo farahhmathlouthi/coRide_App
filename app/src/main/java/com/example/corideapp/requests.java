@@ -1,16 +1,15 @@
 package com.example.corideapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class requests extends AppCompatActivity {
 
@@ -25,54 +24,22 @@ public class requests extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_requests);
 
-        editTextText = findViewById(R.id.editTextText);
-        button9 = findViewById(R.id.button9);
-
-        // Reference to the Firebase database
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-
-        button9.setOnClickListener(new View.OnClickListener() {
+        // Delay the start of the Home activity by a certain duration (e.g., 2 seconds)
+        View decorView = getWindow().getDecorView();
+        decorView.postDelayed(new Runnable() {
             @Override
-            public void onClick(View v) {
-                sendMessageToDatabase();
+            public void run() {
+                // Start the Home activity after the delay
+                Intent intent = new Intent(requests.this, Home.class);
+                startActivity(intent);
+
+                // Finish the loading1 activity to remove it from the back stack
+                finish();
             }
-        });
+        }, 1000); // 2000 milliseconds = 2 seconds (adjust as needed)
+
+
+
     }
 
-
-    private void sendMessageToDatabase() {
-        // Récupérer le texte saisi dans l'EditText
-        String message = editTextText.getText().toString().trim();
-
-        // Vérifier si le message n'est pas vide
-        if (!message.isEmpty()) {
-            // Créer un nouvel ID pour le message
-            String messageId = databaseReference.child("messages").push().getKey();
-
-            // Vérifier si l'ID a été généré avec succès
-            if (messageId != null) {
-                // Créer un nœud "messages" avec l'ID généré
-                DatabaseReference messageReference = databaseReference.child("messages").child(messageId);
-
-                // Enregistrer le message dans la base de données
-                messageReference.setValue(message)
-                        .addOnSuccessListener(aVoid -> {
-                            // Message enregistré avec succès
-                            Toast.makeText(requests.this, "Message sent successfully!", Toast.LENGTH_SHORT).show();
-                            // Effacer le texte de l'EditText après l'envoi
-                            editTextText.setText("");
-                        })
-                        .addOnFailureListener(e -> {
-                            // Erreur lors de l'enregistrement du message
-                            Toast.makeText(requests.this, "Failed to send message: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                        });
-            } else {
-                // Gestion de l'erreur si l'ID n'a pas été généré
-                Toast.makeText(requests.this, "Failed to generate message ID!", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            // Message vide, afficher un message d'erreur
-            Toast.makeText(requests.this, "Please enter a message!", Toast.LENGTH_SHORT).show();
-        }
-    }
 }

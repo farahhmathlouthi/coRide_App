@@ -28,17 +28,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="512dp"
         android:layout_height="352dp"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.297"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/signin" />
-
 
     <LinearLayout
         android:id="@+id/passwordTextInputLayout"
@@ -58,26 +58,29 @@
         <EditText
             android:id="@+id/inputE2"
             android:layout_width="338dp"
-            android:layout_height="53dp"
+            android:layout_height="70dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/input_bg"
             android:backgroundTint="@color/gr"
             android:drawableLeft="@drawable/e_mail"
             android:ems="10"
-            android:hint="Enter Your Email"
+            android:textSize="20dp"
+            android:hint="   Enter Your Email"
             android:inputType="textEmailAddress"
             android:padding="15dp" />
 
         <EditText
             android:id="@+id/inputP1"
             android:layout_width="338dp"
-            android:layout_height="53dp"
+            android:layout_height="70dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/input_bg"
             android:backgroundTint="@color/gr"
             android:drawableLeft="@drawable/dossiers"
+            android:textSize="20dp"
             android:ems="10"
-            android:hint="Enter Your Password"
+            android:textColor="@color/white"
+            android:hint="   Enter Your Password"
             android:inputType="textPassword"
             android:padding="15dp" />
 

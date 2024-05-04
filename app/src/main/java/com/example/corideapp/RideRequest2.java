@@ -54,18 +54,18 @@ public class RideRequest2 {
     public void setTime(String time2) {
         this.time2 = time2;
     }
-    public String getName() {
+    public String getUserName() {
         return fullName2;
     }
 
-    public void setName(String fullName2) {
+    public void setUserName(String fullName2) {
         this.fullName2 = fullName2;
     }
-    public String getPhone() {
+    public String getUserPhone() {
         return phone2;
     }
 
-    public void setPhone(String phone2) {
+    public void setUserPhone(String phone2) {
         this.phone2 = phone2;
     }
 

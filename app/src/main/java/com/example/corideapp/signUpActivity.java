@@ -201,7 +201,7 @@ public class signUpActivity extends AppCompatActivity {
 
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Toast.makeText(signUpActivity.this, "Authentication failed.",
+                                    Toast.makeText(signUpActivity.this, "Password must have: 1 uppercase, 1 number, 1 special character, and be more than 6 characters long.",
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }

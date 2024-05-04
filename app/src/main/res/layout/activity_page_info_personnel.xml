@@ -89,8 +89,10 @@
             android:id="@+id/e1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#000000"
+
             android:drawablePadding="8dp"
+            android:textSize="20sp"
+            android:color="@color/white"
             android:inputType="text|textPostalAddress|textMultiLine"
             android:paddingHorizontal="30dp"
             android:textAlignment="center" />
@@ -111,8 +113,10 @@
             android:id="@+id/e2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#000000"
+
             android:drawablePadding="8dp"
+            android:textSize="20sp"
+            android:color="@color/white"
             android:inputType="text|textPostalAddress|textMultiLine"
             android:paddingHorizontal="30dp"
             android:textAlignment="center" />
@@ -133,8 +137,9 @@
             android:id="@+id/e3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#000000"
             android:drawablePadding="8dp"
+            android:textSize="20sp"
+            android:color="@color/white"
             android:inputType="text|textPostalAddress|textMultiLine"
             android:paddingHorizontal="30dp"
             android:textAlignment="center" />
@@ -155,8 +160,9 @@
             android:id="@+id/e4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#000000"
             android:drawablePadding="8dp"
+            android:textSize="20sp"
+            android:color="@color/white"
             android:inputType="text|textPostalAddress|textMultiLine"
             android:paddingHorizontal="30dp"
             android:textAlignment="center" />
@@ -178,8 +184,9 @@
             android:id="@+id/e5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#000000"
             android:drawablePadding="8dp"
+            android:textSize="20sp"
+            android:color="@color/white"
             android:inputType="text|textPostalAddress|textMultiLine"
             android:paddingHorizontal="30dp"
             android:textAlignment="center" />

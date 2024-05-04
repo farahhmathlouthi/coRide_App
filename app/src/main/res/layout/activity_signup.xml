@@ -13,7 +13,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="700dp"
-        android:layout_height="330dp"
+        android:layout_height="340dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -138,10 +138,11 @@
             android:visibility="gone">
 
         </ProgressBar>
+
         <Button
             android:id="@+id/signUpButton"
             android:layout_width="338dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:backgroundTint="@color/green3"
             android:paddingHorizontal="120dp"
             android:text="Continue"

@@ -126,7 +126,6 @@ public class signUpActivity extends AppCompatActivity {
                     Toast.makeText(signUpActivity.this, "All fields are empty. Please fill in the required information.", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                SP.setVisibility(View.VISIBLE);
 
                 name = editTextName.getText().toString();
                 email = editTextEmail.getText().toString();
@@ -173,6 +172,7 @@ public class signUpActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(signUpActivity.this, "Please check the checkbox.", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, paddingTop);
                     toast.show();
+                    return;
                 } else {
                     // Passwords match, proceed with sign-up logic
                     Toast.makeText(signUpActivity.this, "Passwords match. Proceed with sign-up.", Toast.LENGTH_SHORT).show();

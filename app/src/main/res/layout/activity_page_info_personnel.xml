@@ -63,7 +63,7 @@
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="280dp"
-        android:layout_height="391dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/continueD"
